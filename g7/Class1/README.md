@@ -1,6 +1,6 @@
-# Looking back at objects
+# Looking back at objects 🌳
 When working with data it is really important to organize it and structure it accordingly in order for the application to be easily accessed, readable and scalable. For this reason, there is a need for entities that exist in the real word and their characteristics to be represented in our code and applications. That is why objects exist. Objects are complex data structures that can hold multiple characteristics and functions that work for those objects alone. 
-## Features
+## Features 
 * Objects in JavaScript are written with **{ }** brackets
 * Objects can hold only two things:
 	* **Properties** - Characteristics of the object that can hold any data type such as string, object, array, number etc. They always explain the object. 
