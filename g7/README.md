@@ -13,6 +13,10 @@ This repository will contain every piece of material about the subject. It will 
 * Exercises
 * Homework
 
+## Important links
+* [Presentations link](https://1drv.ms/u/s!Avm0QTH5BvHdgfQSI3o_Q7DLQOi8wQ?e=ZXSZnq)
+* [Schedule](https://drive.google.com/file/d/1GjxpXz2uikzPr192BU9JEl0BrqpN6nCn/view?fbclid=IwAR2juYCaGw9mKzfjdUA5D-DjObTbdHmbYIKwQ6Qb_kuOEksGWxbdK6pXUqk)
+
 ## Resources for being up to date with JavaScript
 #### Sites and newsletters
 [JavaScript Weekly Newsletter](https://javascriptweekly.com/)
@@ -31,6 +35,6 @@ This repository will contain every piece of material about the subject. It will 
 [You don't know JS Books (free)](https://github.com/getify/You-Dont-Know-JS)
 
 ## Contact
-Trainer: trainer@mail.com
+Trainer: gdragan6@gmail.com
 
 Assistant: assistant@mail.com
