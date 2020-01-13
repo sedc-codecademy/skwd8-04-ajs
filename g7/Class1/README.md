@@ -20,8 +20,9 @@ let dog = {
 		console.log("BARK BARK BARK");
 	},
 	eat: function(food){
-		this.favoriteFood.forEach(fav => 
-		fav.toLowerCase() === food.toLowerCase() ? console.log("*My favorite!*") : "");
+		for(let fav of this.favoriteFood){
+			if(fav.toLowerCase() === food.toLowerCase()) console.log("My favorite!");
+		}	
 		console.log("NOM NOM NOM");
 	}
 }
@@ -37,10 +38,11 @@ dog.bark = function(){
 		console.log("BARK BARK BARK");
 	};
 dog.eat = function(food){
-		dog.favoriteFood.forEach(fav => 
-		fav.toLowerCase() === food.toLowerCase() ? console.log("*My favorite!*") : "");
-		console.log("NOM NOM NOM");
-		}
+for(let fav of this.favoriteFood){
+		if(fav.toLowerCase() === food.toLowerCase()) console.log("My favorite!");
+		}	
+	console.log("NOM NOM NOM");			
+}
 ```
 ### Using and changing objects
 ```javascript
