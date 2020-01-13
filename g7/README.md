@@ -37,4 +37,4 @@ This repository will contain every piece of material about the subject. It will 
 ## Contact
 Trainer: gdragan6@gmail.com
 
-Assistant: assistant@mail.com
+Assistant: damjanstojanovski454@gmail.com
