@@ -1,0 +1,9 @@
+/*
+	Make a function that will iterate over array and return the value 0 at the end - it should automatically find
+	the value 0.
+
+	Bonus: Make second function that will return even numbers back in a new array
+*/
+
+let array = [[[2, [1, [[4, [[0], 5]]]]]]];
+
