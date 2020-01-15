@@ -5,16 +5,16 @@ function Student(firstName, lastName, birthYear, academy, grades) {
     this.academy = academy;
     this.grades = grades;
 
-    this.getInfo = function() {
+    this.getInfo = function () {
         return `This is ${this.firstName} ${this.lastName} from ${this.academy}`;
     };
 
-    this.getAge = function() {
+    this.getAge = function () {
         let currentYear = new Date().getFullYear();
         return currentYear - this.birthYear;
     };
 
-    this.getGradesAverage = function() {
+    this.getGradesAverage = function () {
         let sum = 0;
         for (let grade of grades) {
             sum += grade;
@@ -45,16 +45,16 @@ function saveStudent(student) {
 };
 
 function printStudents(students) {
-    let tr = document.createElement("tr");
-    let td_1 = document.createElement("td");
-    let td_2 = document.createElement("td");
-    let td_3 = document.createElement("td");
-    let td_4 = document.createElement("td");
-    let td_5 = document.createElement("td");
-
-    let grades = "";
 
     for (let student of students) {
+        let tr = document.createElement("tr");
+        let td_1 = document.createElement("td");
+        let td_2 = document.createElement("td");
+        let td_3 = document.createElement("td");
+        let td_4 = document.createElement("td");
+        let td_5 = document.createElement("td");
+
+        let grades = "";
         td_1.innerText = student.firstName;
         td_2.innerText = student.lastName;
         td_3.innerText = student.birthYear;
@@ -78,7 +78,7 @@ function printStudents(students) {
 }
 
 
-btn.addEventListener("click", function(e) {
+btn.addEventListener("click", function (e) {
     e.preventDefault();
 
     let firstNameVal = fName.value;
