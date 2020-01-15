@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-Library</title>
+</head>
+
+<body>
+    <p id="info-message"></p>
+
+    <button id="showBooks">Show Books</button>
+    <br>
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title">
+    <br>
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author">
+    <br>
+    <label for="year">Year:</label>
+    <input type="number" name="year" id="year">
+    <br>
+    <button id="save-btn">Save</button>
+    <br>
+    <label for="bookId">Book Id:</label>
+    <input type="number" name="bookId" id="bookId">
+    <br>
+    <button id="lend-btn">Lend/Return</button>
+    <button id="delete-btn">Delete</button>
+    <br>
+    <label for="letter">Search By Letter:</label>
+    <input type="text" name="letter" id="letter-search">
+    <br>
+    <button id="letter-btn">Search</button>
+    <br>
+
+    <label for="search">Search By Any Word:</label>
+    <input type="text" name="search" id="search">
+    <br>
+    <button id="search-btn">Search</button>
+    <br>
+
+    <label for="year-from">From Year:</label>
+    <input type="number" name="year-from" id="year-from">
+    <br>
+    <label for="year-to">To Year:</label>
+    <input type="number" name="year-to" id="year-to">
+    <br>
+    <button id="year-btn">Search</button>
+    <br>
+
+    <ol id="books">
+
+    </ol>
+
+    <script src="./lib/script.js"></script>
+</body>
+
+</html>
