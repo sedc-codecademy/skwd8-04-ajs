@@ -59,7 +59,7 @@ dog.bark() // AF AF AF
 ## Constructor Notation Templates
 ```javascript
 function Dog(name, color, age, favoriteFood){
-	this.name = name === undefined ? "unnamed" : name; // in case tehre is no name
+	this.name = name === undefined ? "unnamed" : name; // in case there is no name
 	this.color = color;
 	this.age = age;
 	this.hasOwner = false; // default value for all
