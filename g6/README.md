@@ -24,6 +24,8 @@ This repository will contain every piece of material about the subject. It will 
 [Hackr.io JavaScript boards](https://hackr.io/tutorials/learn-javascript)
 
 #### Books
+[JavaScript and jQuery: Interactive Front-End Web Development](https://www.bookdepository.com/JavaScript-JQuery-Jon-Duckett/9781118531648?ref=pd_gw_1_pd_gateway_1_1)
+
 [Secret of the JavaScript Ninja Second Edition](https://www.bookdepository.com/Secrets-of-the-JavaScript-Ninja--Second-Edition/9781617292859)
 
 [Eloquent JavaScript (free)](https://eloquentjavascript.net/)
