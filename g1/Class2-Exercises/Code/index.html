@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Exercise</title>
+</head>
+
+<body>
+    <form>
+        <div class="container">
+            <h1>Register</h1>
+            <p>Please fill in this form to create a student.</p>
+
+            <label for="fName"><b>Firstname:</b></label>
+            <input type="text" placeholder="Enter Firstname" id="fName" required> <br><br>
+
+            <label for="lName"><b>Lastname:</b></label>
+            <input type="text" placeholder="Enter Lastname" id="lName" required> <br><br>
+
+            <label for="birthYear"><b>Birth year:</b></label>
+            <input type="number" placeholder="Enter birth year" id="birthYear" required> <br><br>
+
+            <label for="academy"><b>Academy:</b></label>
+            <input type="text" placeholder="Enter academy" id="academy" required> <br><br>
+
+            <label for="academy"><b>Grades:</b></label>
+            <input type="text" placeholder="Enter grades" id="grades" required> <br><br>
+
+            <button type="submit" id="register">Register</button>
+        </div>
+    </form>
+
+
+    <div id="result">
+        <table border="1">
+            <thead>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Birth year</th>
+                <th>Academy</th>
+                <th>Grades</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./student.js"></script>
+</body>
+
+</html>
