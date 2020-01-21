@@ -2,16 +2,16 @@
 
 // JSON Example
 let myJson = `{
-    "trainer": "Dragan Gelevski",
-    "assistant": "Dejan Blazeski",
+    "trainer1": "Ivo Kostovski",
+    "trainer2": "Aleksandar Kocevski",
     "students": [
-      "Bob",
-      "Samantha",
-      "Chris",
-      "Jill",
-      "Greg"
+        "Ile",
+        "Nenad",
+        "Maja",
+        "Bojan",
+        "Boris"
     ],
-    "academy": "Code"
+    "academy": "SEDC"
   }`;
 let jsObject = JSON.parse(myJson);
 console.log(typeof(myJson));
