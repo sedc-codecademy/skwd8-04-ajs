@@ -5,7 +5,7 @@ let myJson = `{
     "trainer1": "Ivo Kostovski",
     "trainer2": "Aleksandar Kocevski",
     "students": [
-        "Ile",
+        "Ilija",
         "Nenad",
         "Maja",
         "Bojan",
