@@ -8,8 +8,8 @@ JSON is one of the most commonly used format in which we send or get packages to
 ##### A JavaScript Object
 ```javascript
 let someObject = {
-  trainer: "Dragan Gelevski",
-  assistant: "Damjan Stojanovski",
+  trainer1: "Dejan Jovanov",
+  trainer2: "Ivo Kostovski",
   students: [
     "Bob",
     "Samantha",
@@ -23,8 +23,8 @@ let someObject = {
 ##### A json file
 ```json
 {
-  "trainer": "Dragan Gelevski",
-  "assistant": "Damjan Stojanovski",
+  "trainer1": "Dejan Jovanov",
+  "trainer2": "Ivo Kostovski",
   "students": [
     "Bob",
     "Samantha",
@@ -77,8 +77,7 @@ $.ajax({
   url: "https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class1/students.json",
   success: function (response) {
     console.log('The request succeeded!');
-    let resultParsed = JSON.parse(response);
-    console.log(resultParsed);
+    console.log(response);
   }, 
   error: function(response){
     console.log('The request failed!');
