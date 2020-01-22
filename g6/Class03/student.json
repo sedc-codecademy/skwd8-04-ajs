@@ -1,0 +1,9 @@
+{
+    "firstName":"Trajko",
+    "lastName":"Trajkovski",
+    "birthDate": "1990-09-19T22:00:00.000Z",
+    "academy": "SEDC",
+    "subjects": ["js-advanced", "js-basic", "html"],
+    "grades": [7, 8, 9],
+    "city": "Skopje"
+}
