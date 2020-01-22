@@ -86,6 +86,18 @@ $.ajax({
   }
 });
 ````
+##### Fetch
+```javascript
+fetch('https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class1/students.json')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(myJson);
+  });
+````
+
+
 
 ## APIs
 API pages are pages that allow you to make requests and get some data from them. You send a request to an API and it returns the data that you need. You can request for the weather on some weather APIs, request for info about books, music, sport matches etc. We request the information that we need with AJAX calls. Some APIs require a special key to be sent in order for them to return some data. A special key is usually acquired if you create an account on the page that is sometimes free and others paid. We can find out if the API requires a key or not through the documentation of the API. There are also APIs that don't require any key or account and payment. Here are some:
