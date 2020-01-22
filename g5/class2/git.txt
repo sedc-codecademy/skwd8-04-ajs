@@ -1,0 +1,31 @@
+#https://github.com/igorjos/test.git
+
+Git commands
+
+git clone - clones the repository from origin to local PC
+
+git pull - get latest changes from repository
+
+git fetch - get updates only from repository
+
+git commit - Add commit message for code that will be sent
+
+git push - send the code to repository
+
+
+#Example flow
+git clone https://github.com/igorjos/test.git 
+git fetch
+
+/....... after some time team members had changed something ..../
+
+git status //Check which files were modified by me
+git add . //Add all changed files on my pc for commit
+git commit -m "I'm commiting (preparing) my latest changes to repository"
+
+git pull - get latest stuff from repository
+git push - I'm sending my stuff from pc to repository
+
+#SETUP local config user
+git config --local user.email "github_email_address_that_you_use"
+

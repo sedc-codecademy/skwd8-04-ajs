@@ -1,0 +1,12 @@
+{
+  "trainer1": "Ivo Kostovski",
+  "trainer2": "Aleksandar Kocevski",
+  "students": [
+    "Ilija",
+    "Nenad",
+    "Maja",
+    "Bojan",
+    "Boris"
+  ],
+  "academy": "SEDC"
+}

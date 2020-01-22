@@ -37,4 +37,4 @@ This repository will contain every piece of material about the subject. It will 
 ## Contact
 Co-Trainer: ivo.kostovski@gmail.com
 
-Co-Trainer: 
+Co-Trainer: alek.kocevski@hotmail.com
