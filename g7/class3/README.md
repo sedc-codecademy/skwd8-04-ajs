@@ -9,7 +9,7 @@ JSON is one of the most commonly used format in which we send or get packages to
 ```javascript
 let someObject = {
   trainer: "Dragan Gelevski",
-  assistant: "Dejan Blazeski",
+  assistant: "Damjan Stojanovski",
   students: [
     "Bob",
     "Samantha",
@@ -24,7 +24,7 @@ let someObject = {
 ```json
 {
   "trainer": "Dragan Gelevski",
-  "assistant": "Dejan Blazeski",
+  "assistant": "Damjan Stojanovski",
   "students": [
     "Bob",
     "Samantha",
