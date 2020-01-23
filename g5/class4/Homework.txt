@@ -1,0 +1,19 @@
+1. You know how old your dog is in human years, but what about dog years? Calculate it!
+
+Write a function named calculateDogAge that:
+takes 1 argument: your puppy's age.
+calculates your dog's age based on the conversion rate of 1 human year to 7 dog years.
+outputs the result to the screen like so: "Your doggie is NN years old in dog years!"
+Call the function three times with different sets of values.
+Bonus: Add an additional argument to the function that takes the conversion rate of human to dog years.
+
+2. Write a function that will reverse a string as output (any string), using recursion
+e.g. Hello -> olleH
+
+3. Write a function that will take two arguments. First argument should be a sentence, second one should be one word.
+Return how many times the word had appeared in that sentence.
+e.g appearance('This was a hot summer, and a very dry one', 'a') -> should return that 'a' was present 2 times.
+
+4. Write a function that will print table using Javascript, the table should have 5 columns and 10 rows.
+
+ 
