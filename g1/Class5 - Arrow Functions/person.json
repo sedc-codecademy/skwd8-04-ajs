@@ -1,0 +1,15 @@
+{
+    "name": "Petar",
+    "surname": "Petrovski",
+    "age": 40,
+    "hasDog": true,
+    "children": [
+        "Tomy",
+        "Maria"
+    ],
+    "animal": {
+        "name": "Sharko",
+        "breed": "Sharplaninec",
+        "bites": false
+    }
+}
