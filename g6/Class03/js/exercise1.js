@@ -13,8 +13,19 @@
 //            xmlHttpRequest.open("GET", "https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g6/Class03/students.json");
 //            xmlHttpRequest.send();
 //         });
+// function showStudents(students) {
+//     //here we assume that all students have same value for academy
+//     document.getElementById("academyName").innerHTML = students[0].academy;
+//     let studentsUl = document.getElementById("students");
+//     studentsUl.innerHTML = "";
+//     for (const student of students) {
+//         let li = document.createElement("li");
+//         li.appendChild(document.createTextNode(`${student.firstName} ${student.lastName}`));
+//         studentsUl.appendChild(li);
+//     }
+// }
 
-//using jQuery
+//using jQuery library ($/jQuery is the main, global function that we get from the library)
 $(document).ready(function () {
     $("#getStudents").on('click', function () {
             $.ajax({
@@ -32,12 +43,13 @@ $(document).ready(function () {
 
 function showStudents(students) {
     //here we assume that all students have same value for academy
-    document.getElementById("academyName").innerHTML = students[0].academy;
-    let studentsUl = document.getElementById("students");
-    studentsUl.innerHTML = "";
+    $("#academyName").text(students[0].academy);
+    //by convention we start the names of jQuery objects with $
+    let $studentsUl = $("#students");
+    $studentsUl.empty();
     for (const student of students) {
-        let li = document.createElement("li");
-        li.appendChild(document.createTextNode(`${student.firstName} ${student.lastName}`));
-        studentsUl.appendChild(li);
+        let $li = $("<li>");
+        $li.text(`${student.firstName} ${student.lastName}`);
+        $studentsUl.append($li);
     }
 }
