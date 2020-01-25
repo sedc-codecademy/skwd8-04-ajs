@@ -74,3 +74,8 @@ sumAsArrowFunctionWithManyStatements(8, 2);
 let sayHelloAsArrowFunction = _ => console.log("Hello from arrow function");//same as above line
 sayHelloAsArrowFunction();
 
+//arrow function with one parameter
+let sayHelloToSomeone = name => console.log(`Hello ${name}`);
+//let sayHelloToSomeone = (name) => console.log(`Hello ${name}`);//same as above line but we do not need parenteses
+sayHelloToSomeone('Pero Antic');
+
