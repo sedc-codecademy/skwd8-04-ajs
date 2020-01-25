@@ -8,7 +8,7 @@ Make 3 functions:
 
 Create a function that takes a number through a parameter and calls all three functions for the number that was passed. It should show the results in the console. 
 #### Ex: 
-**Code:** getNumberStats(-25);
+**Code:** logNumberStats(-25);
 **Console:** 2 Digits, Odd, Negative
 
 
