@@ -68,13 +68,13 @@ xhr.onload = function () {
     console.log(xhr.responseText);
   }
 };
-xhr.open('GET', 'https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class1/students.json');
+xhr.open('GET', 'https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%203%20-%20AJAX/Exercises/students.json');
 xhr.send();
 ````
 ##### JQuery
 ```javascript
 $.ajax({
-  url: "https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class1/students.json",
+  url: "https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%203%20-%20AJAX/Exercises/students.json",
   success: function (response) {
     console.log('The request succeeded!');
     let resultParsed = JSON.parse(response);
@@ -88,7 +88,7 @@ $.ajax({
 ````
 ##### Fetch
 ```javascript
-fetch('https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class1/students.json')
+fetch('https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%203%20-%20AJAX/Exercises/students.json')
   .then(function(response) {
     return response.json();
   })
