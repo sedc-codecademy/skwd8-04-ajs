@@ -27,9 +27,11 @@ We will be using the [openWeatherMap](https://openweathermap.org/) API. This API
 * **API:**https://openweathermap.org/current
 
 * **Weather for a City Link:** https://api.openweathermap.org/data/2.5/forecast?q=CITY-NAME-HERE&units=metric&APPID=API-KEY-HERE
+
 Ex: https://api.openweathermap.org/data/2.5/forecast?q=skopje&units=metric&APPID=64e59f6374abe0d9b758877616ae444b
 
 * **Icon Link:** http://openweathermap.org/img/w/ICON-CODE-HERE.png
+
 Ex: http://openweathermap.org/img/w/10d.png
 
 * **Limit:** 60 per minute
