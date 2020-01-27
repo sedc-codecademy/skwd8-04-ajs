@@ -1,0 +1,22 @@
+1. Create account on https://github.com/
+2. Check this link for info about github(https://guides.github.com/activities/hello-world/#repository)
+3. Create new repository on github (explained in step 1 from the link above)
+4. Install git on your pc (https://git-scm.com/downloads)
+5. Create folder where you will store source code (C:\SourceCode)
+6. Open git bash in the newly created folder (right click and select git bash)
+7. Make a clone of the GitHub repository you created above 
+(git clone {https-link-from-the-repo-here})
+ex. git clone https://github.com/sedc-codecademy/skwd8-04-ajs.git
+8. Add your files into the folder that we cloned from the GitHub 
+(check if the folder contains .git folder, it is hidden folder so check View=>HiddenItems)
+9. Open git bash into your cloned repository/folder 
+10. Execute command 'git status'
+11. It will show that you have unstaged changes (if you added new files above)
+12. Execute command 'git add .' for staging all changes
+13. Execute command 'git status' (it will show that there are changes waiting for commit)
+14. Execute comand 'git commit -m "Message explaining the change you make"'
+15. Execute command 'git status' (It will show that you are 1 step before remote branch or server)
+16. Execute command 'git push' to push your local changes to the server (GitHub)
+
+*If you cloned advanced js repo (https://github.com/sedc-codecademy/skwd8-04-ajs.git)
+you can pull remote changes with the command 'git pull'
