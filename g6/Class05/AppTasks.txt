@@ -1,0 +1,12 @@
+Tasks for WeatherAlert Application
+
+1. Create html page (index.html), js file(app.js), style.css and link them into html page
+2. Add bootstrap to index.html
+3. Create navbar with links to 3 of the needed pages(Home-statistics, hourly-weather, about)
+4. Add log and application name into navbar
+5. Add 3 pages (as divs to the html)
+6. Add js logic for navbar links
+7. Create first page details add to html (welcome message and text)
+7.1 Make ajax call to http://api.openweathermap.org/ (find the appropriate url), get the needed data, aggregate it and display it into html
+8. Create second page details (hourly data) get the needed data using ajax call from the api(http://api.openweathermap.org/) and display it into html table
+9. Create about page details(only html info about us)
