@@ -1,0 +1,4 @@
+#1 Create a function that will print a clock on the screen and update with correct time.
+
+#2 Create a function that returns function which accept array of words. As result it should return array with numbers
+where each number tells how many characters had each word of the array.
