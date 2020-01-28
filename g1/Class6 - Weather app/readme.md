@@ -33,3 +33,9 @@ The web page should be:
 8. The person wants to see who made this app
 9. Clicks on the About link
 10. Imidietly the view changes to the about view ( without loading the app again )
+
+Extra features 🎈
+Sorting in the tables
+Loading animation while the application gets the data
+Nice error message when a request has been denied ( Ex: unavailable, request limit, no page like that, access denied )
+Add suggestion page that requires best temperature + humidity and finds the most appropriate time in the following days
