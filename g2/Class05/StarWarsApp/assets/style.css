@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.medium {
+    height: 40vh;
+}
+
+.small {
+    height: 30vh;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#btnNext, #btnPrev {
+    display: none;
+}
+
+#loader {
+    display: none;
+    width: 80px;
+}
