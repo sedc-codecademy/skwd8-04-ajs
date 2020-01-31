@@ -297,6 +297,12 @@ console.log(students); // Original order
 ![Pass by refference ](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class4/img/passbyrefference.gif?raw=true)
 
 ## Pure functions
+**Two things need to be true for a function to be pure.**
+
+**First condition:** A function can be pure if and only if the only thing it uses to calculate its output are the arguments you pass it, and local variables declared inside of the function itself.
+
+**Second condition:** A function can be pure if and only if it only if it does not change state outside of its own scope.
+
 Pure functions are functions that do not need or change anything in the outside world. There is no special syntax or code for pure functions. You wrote some pure functions until this point for sure without even knowing that you did it. Pure function is a state of a function that we always try to achieve. With pure function, our code is cleaner, more organised and decoupled ( with few connections and ties ). A code with pure functions is a code that can scale easily ( easier to continue working on and build on top of in the future ). Of course there are times when you need something from the outside or you need to change something outside of the function and it is not wrong to not write a function that is not pure. But every time you write a function ask your self:
 * Can I request  for the stuff that I need through parameters instead of accessing them directly and get the same results?
 * Can I return a value instead of changing a value from the outside directly and get the same results?
@@ -334,7 +340,7 @@ function increaseByOne(numbers) {
     let result = [];
     for(let i = 0; i < numbers.length; i++) {
 		result.push(numbers[i] + 1)
-        document.getElementById("result").innerHTML += numbers[i] + " ";
+        document.getElementById("result") += numbers[i] + " ";
     }
     return result;
 }
