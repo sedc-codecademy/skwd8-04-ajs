@@ -334,7 +334,7 @@ function increaseByOne(numbers) {
     let result = [];
     for(let i = 0; i < numbers.length; i++) {
 		result.push(numbers[i] + 1)
-        document.getElementById("result") += numbers[i] + " ";
+        document.getElementById("result").innerHTML += numbers[i] + " ";
     }
     return result;
 }
