@@ -173,4 +173,3 @@ The request succeeded!
 * [How does the event loop work](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
 * [Callbacks explained](https://www.sitepoint.com/callbacks-javascript/)
 * [Amazing video about the event loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
-* [Visual representation of the event loop](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
