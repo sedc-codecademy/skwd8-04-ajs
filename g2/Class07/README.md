@@ -7,7 +7,7 @@ Modern javascript runs most of the time in the browser. This means that it gets 
 	1.1 **Memory Heap** - A region in memory used for storing values and other types of data in an ordered fashion
 	1.2 **Call Stack** - A structure where our functions are queued for running. It fills with tasks and it executes them in order LIFO ( Last In First Out )
 2. **Browser APIs** - The browser APIs that help javascript run smoothly and without clogging. 
-3.  **Even Queue** - A queue that holds the results of the browsers APIs ( callbacks ) until they are added to the stack and executed. The order of giving out these callbacks is FIFO ( First In First Out )
+3.  **Event Queue** - A queue that holds the results of the browsers APIs ( callbacks ) until they are added to the stack and executed. The order of giving out these callbacks is FIFO ( First In First Out )
 4. **Event Loop** - A mechanism that checks if the stack is empty, and when it is pushes a task ( callback ) from the event queue on to the stack to be executed
 
 ## Working with the browser
@@ -16,7 +16,7 @@ In the browser there are a lot of mechanisms for running our code smoothly. As w
 Will execute a function passed as an argument when a given time passes. The second parameter of this function is how many milliseconds do we actually want to wait, or delay some code. 
 ```javascript
 	// with annon function
-	setTimeout(function(){ console.log("This happens later!"}, 2000);
+	setTimeout(function(){ console.log("This happens later!")}, 2000);
 	// with arrow function
 	setTimeout(()=>  console.log("This happens later!"), 2000);
 ```
@@ -169,7 +169,7 @@ The request succeeded!
 {our response}
 
 ## Extra materials &#x1F4D9;
-* [Very usefull tool](http://latentflip.com/loupe/)
+* [Very useful tool](http://latentflip.com/loupe/)
 * [How does the event loop work](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
 * [Callbacks explained](https://www.sitepoint.com/callbacks-javascript/)
 * [Amazing video about the event loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
