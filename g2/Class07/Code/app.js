@@ -39,7 +39,7 @@
 // third();
 
 
-// with annonymous function
+// with anonymous function
 // setTimeout(function(){ console.log("This happens later!")}, 2000);
 // with arrow function
 // setTimeout(() =>  console.log("This happens later!"), 4000);
