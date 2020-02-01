@@ -98,10 +98,10 @@ function longestString() {
 ```
 
 ## Higher order functions
-Higher order functions are just functions that take other functions as arguments. With these functions we can make our code more readable and more organised. We can combine higher order functions to get results that would otherwise cost us 10+ lines of code, to be written and compacted in to only one or two. 
+Higher order functions are just functions that take other functions as arguments. With these functions we can make our code more readable and more organized. We can combine higher order functions to get results that would otherwise cost us 10+ lines of code, to be written and compacted in to only one or two. 
 
 #### forEach
-forEach is a function that accepts a function as an argument and it runs it for every element in an array. This function does not return anything. It just runs a code for every element without any resul in return. 
+forEach is a function that accepts a function as an argument and it runs it for every element in an array. This function does not return anything. It just runs a code for every element without any result in return. 
 ```javascript
 // Without higher order function
 for (let i = 0; i < students.length; i++) {
@@ -114,7 +114,7 @@ function logFullNames(student){
 }
 students.forEach(logFullNames);
 
-// With higher order function using annonimous function
+// With higher order function using anonymous function
 students.forEach(function(student){ console.log(`${student.firstName} ${student.lastName}`)});
 
 // With higher order function using arrow function
@@ -138,7 +138,7 @@ function above18check(student){
 }
 let above18 = students.filter(above18check);
 
-// With higher order function using annonimous function
+// With higher order function using anonymous function
 let above18 = students.filter(function(student){ return student.age >= 18});
 
 // With higher order function using arrow function
@@ -167,7 +167,7 @@ let fiveGradeStudentsNames = students
 .filter(fiveGradeCheck)
 .map(fullName);
 
-// With higher order function using annonimous function
+// With higher order function using anonymous function
 let fiveGradeStudentsNames = students
 .filter(function(student){ 
 	return student.averageGrade === 5
@@ -184,10 +184,10 @@ let fiveGradeStudentsNames = students
 Reduce is a function that accepts a function with two parameters as an argument and a starting value. This function aggregates multiple values from a collection in to one place. It does this with the function passed in with two parameters. The first parameter is always an aggregate variable. This means that in that all calculations and results will be combined there. And after that you have the second parameter which is changed after every cycle and represents a value from the collection. 
 ```javascript
 // Without higher order function
-let allGradesExeptLowest = 0;
+let allGradesExceptLowest = 0;
 for (let i = 0; i < students.length; i++) {
     if (students[i].averageGrade > 1) {
-        allGradesExeptLowest += students[i].averageGrade;
+        allGradesExceptLowest += students[i].averageGrade;
     }
   }
 // With higher order function using a function
@@ -197,29 +197,29 @@ function lowestGradeCheck(student){
 function getGrades(student){
 	return student.averageGrade;
 }
-function agregateGrades(sum, grade){
+function aggregateGrades(sum, grade){
 	return sum += grade;
 }
-let allGradesExeptLowest = students
+let allGradesExceptLowest = students
 .filter(lowestGradeCheck)
 .map(getGrades)
-.reduce(agregateGrades, 0);
+.reduce(aggregateGrades, 0);
 
-// With higher order function using annonimous function
-let allGradesExeptLowest = students
+// With higher order function using anonymous function
+let allGradesExceptLowest = students
 .filter(function(student){ return student.averageGrade > 1})
 .map(function(student){ return student.averageGrade })
 .reduce(function(sum, grade){ return sum += grade }, 0);
 
 // With higher order function using arrow function
-let allGradesExeptLowest = students
+let allGradesExceptLowest = students
 .filter(student => student.averageGrade > 1)
 .map((student) => student.averageGrade)
 .reduce((sum, grade) => sum += grade, 0);
 ```
 
 #### sort
-Sort is a function that always returns an array of the same items, and of the same length but the items are sorted by some criteria. This function is different from the previous ones because not only does it return a result array, it laso changes the original array. So if we want to keep the original order of our array we have to create a new variable with the copy of the original variable and sort that, so that our original array can stay the same. The sorting is done through a simple system. We send a callback that takes two parameters. The two parameters are tested in some expression. If the expression returns less than 0, the first item is sent to a lower index than the second. If the expression returns more than 0 than the second is put to a lower index than the first. If the result is 0 then nothing happens.
+Sort is a function that always returns an array of the same items, and of the same length but the items are sorted by some criteria. This function is different from the previous ones because not only does it return a result array, it also changes the original array. So if we want to keep the original order of our array we have to create a new variable with the copy of the original variable and sort that, so that our original array can stay the same. The sorting is done through a simple system. We send a callback that takes two parameters. The two parameters are tested in some expression. If the expression returns less than 0, the first item is sent to a lower index than the second. If the expression returns more than 0 than the second is put to a lower index than the first. If the result is 0 then nothing happens.
 ```javascript
 // Without higher order function
 function sortFunc(arr){
@@ -246,7 +246,7 @@ function sortGradesAsc(student1, student2){
 }
 studentss.sort(sortGradesDesc);
 
-// With higher order function using annonimous function
+// With higher order function using anonymous function
 studentss.sort(function(student1, student2){
 	return student2.grade - student1.grade; // Descending
 });
@@ -270,7 +270,7 @@ sortedStudents.sort((student1, student2) =>student1.grade - student2.grade); // 
 ```
 
 #### Copy of an original array?
-By just writing let newStudents = students; we do not make a copy of the students array in the newStudents. We just pass a refference to the students array. This means that the two variables point to the same place in memory. When methods like sort, change this array it changes in the memory, and with that in our both variables. 
+By just writing let newStudents = students; we do not make a copy of the students array in the newStudents. We just pass a reference to the students array. This means that the two variables point to the same place in memory. When methods like sort, change this array it changes in the memory, and with that in our both variables. 
 ```javascript
 let sortedStudents = students;
 sortedStudents.sort((student1, student2) =>student2.grade - student1.grade);
@@ -294,7 +294,7 @@ console.log(sortedStudents); // Sorted
 console.log(students); // Original order
 ```
 
-![Pass by refference ](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class4/img/passbyrefference.gif?raw=true)
+![Pass by reference ](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class4/img/passbyrefference.gif?raw=true)
 
 ## Pure functions
 Pure functions are functions that do not need or change anything in the outside world. There is no special syntax or code for pure functions. You wrote some pure functions until this point for sure without even knowing that you did it. Pure function is a state of a function that we always try to achieve. With pure function, our code is cleaner, more organised and decoupled ( with few connections and ties ). A code with pure functions is a code that can scale easily ( easier to continue working on and build on top of in the future ). Of course there are times when you need something from the outside or you need to change something outside of the function and it is not wrong to not write a function that is not pure. But every time you write a function ask your self:
@@ -351,10 +351,10 @@ Javascript lets us do all sorts of magic things. But some might say it is too fl
 'use strict';
 // These lines of code will throw an error if we use strict
 number = 15; // no declaration
-delete number; // cant delete stuff
+delete number; // can't delete stuff
 function sum(num1, num1){ return num1 + num1 }; // same parameter names
-let eval = 5; // cant use keyword eval
-let arguments = 2; // cant use ketworkd arguments
+let eval = 5; // can't use keyword eval
+let arguments = 2; // can't use keyword arguments
 ```
 
 ## Extra materials &#x1F4D9;

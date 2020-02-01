@@ -174,7 +174,7 @@ console.log(students.reduce((sum, student) => sum + student.grade, 0));
 
 let fruits = ["apple", "orange", "banana"];
 
-console.log(fruits.reduce((agregator, fruit) => agregator + fruit, ""));
+console.log(fruits.reduce((aggregator, fruit) => aggregator + fruit, ""));
 
 
 
@@ -244,7 +244,7 @@ newUnsorted = unsorted;
 
 console.log(unsorted.map(x => x + 1));
 
-console.log(unsorted);/
+console.log(unsorted);
 console.log(newUnsorted);
 
 
