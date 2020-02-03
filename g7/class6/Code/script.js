@@ -191,7 +191,7 @@ let combinedNames = students
 console.log("COMBINED NAMES:" + combinedNames);
 
 // Sort
-
+// SORT CHANGES THE ORIGINAL ARRAY
 let newNumbers = numbers;
 newNumbers.sort((num1, num2) => num1 - num2); // Ascending
 console.log(numbers);
@@ -200,9 +200,10 @@ newNumbers.sort((num1, num2) => num2 - num1); // Descending
 console.log(numbers);
 console.log(newNumbers);
 
+// Change the -1 and 1 to sort by descending
 students.sort((student1, student2) => {
     if (student1.firstName < student2.firstName) return -1;
-    if ( student1.firstName > student2.firstName) return 1;
+    if (student1.firstName > student2.firstName) return 1;
     return 0;
 })
 console.log(students);
