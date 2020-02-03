@@ -105,7 +105,7 @@ students.forEach(student => {
     console.log(`${student.firstName} ${student.lastName}`)
 });
 
-let numbers = [2,3,4,5,5,5,3,2,1,1,1,2,3,4];
+let numbers = [2,3,4,5,5,5,3,2,1,1,1,2,3,4,23];
 // filter
 // Executes a function that either returns true or false on every element
 // Every execution of the function of an element that returns true will be added in a new result array
@@ -166,3 +166,43 @@ let ownersOver30 = pets
 .filter(pet => pet.owner.age > 30) // Will return PET objects
 .map(pet => pet.owner); // Will return OWNER objects
 console.log(ownersOver30);
+
+// Reduce
+// Compiles all items in one result
+// Has 2 parameters
+// 1 paramter - Anonymous function that has also 2 paramters
+// anon 1 parameter ( result ) - Variable where all the values will be stored or combined
+// anon 2 parameter ( number ) - Every item from the array will be stored here one by one
+// 2 paramter - starting value of the anon function result parameter
+// REDUCE DOES NOT CHANGE THE INITIAL ARRAY
+// REDUCE ALWAYS RETURNS ONE RESULT
+// Ex of result implementation: result = 0;
+let reduceResult = numbers.reduce((result, number) => {
+   return result = result + number
+}, 0);
+console.log("REDUCE RESULT: " + reduceResult);
+
+// Combine all the first names of the students
+let combinedNames = students
+.map(student => student.firstName) // This will return array of first names ( strings )
+.reduce((result, firstName) => {
+    return result = result + " " + firstName;
+}, "");
+console.log("COMBINED NAMES:" + combinedNames);
+
+// Sort
+
+let newNumbers = numbers;
+newNumbers.sort((num1, num2) => num1 - num2); // Ascending
+console.log(numbers);
+console.log(newNumbers);
+newNumbers.sort((num1, num2) => num2 - num1); // Descending
+console.log(numbers);
+console.log(newNumbers);
+
+students.sort((student1, student2) => {
+    if (student1.firstName < student2.firstName) return -1;
+    if ( student1.firstName > student2.firstName) return 1;
+    return 0;
+})
+console.log(students);
