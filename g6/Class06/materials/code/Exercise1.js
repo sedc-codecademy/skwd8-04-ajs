@@ -7,13 +7,15 @@ $(function () {
         url:"https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g6/Class06/materials/students.json",
         success: function (response) {
             let students = JSON.parse(response);
-            console.log(students);
+            console.log('When we got response from server ' + students);
             solveExercise1(students);
+            
         },
         error: function (error) {
             console.log(error);
         }
     });
+    console.log('After ajax call');
 });
 
 function solveExercise1(students) {
