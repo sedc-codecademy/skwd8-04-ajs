@@ -149,11 +149,11 @@ function  makeCall(url, callback){
 		url:  url,
 		success:  function (response) {
 			console.log('The request succeeded!');
-			callback(response)
+			print(response)
 		},
 		error:  function(response){
 			console.log('The request failed!');
-			callback(response.responseText);
+			print(response.responseText);
 		}
 	});
 }
