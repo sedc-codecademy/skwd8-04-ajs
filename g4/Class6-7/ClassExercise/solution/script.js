@@ -9,10 +9,8 @@ let data = [];
     let url = "https://jsonplaceholder.typicode.com/users";
 
     fetch(url)
-        .then(data => data.json()) 
-        .then(response => {
-            data = response 
-        })
+        .then(response => response.json()) 
+        .then(response => data = response)
         .finally(() => {    
             displayUsers(display, data);
             printSumOfTheIDs(data);
