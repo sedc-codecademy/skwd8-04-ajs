@@ -131,16 +131,16 @@ function numPromise(num, ms = 500) {
 //     result3 + result1
 //   }
 
-numPromise(8)
-  .then(result1 => {
-    numPromise(result1)
-      .then(result2 => {
-        numPromise(result2, 2000)
-          .then(result3 => console.log(result1 + result2 + result3))
-        }
-      )
-    }
-  )
+// numPromise(8)
+//   .then(result1 => {
+//     numPromise(result1)
+//       .then(result2 => {
+//         numPromise(result2, 2000)
+//           .then(result3 => console.log(result1 + result2 + result3))
+//         }
+//       )
+//     }
+//   )
 
 async function numAsync(num) {
   let result1 = await numPromise(num)
@@ -151,10 +151,59 @@ async function numAsync(num) {
 }
 
 
+// fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%208%20-%20Promise/materials/documents.json")
+//   .then(res => res.json())
+//   .then(data => {
+//     let filteredData = data.filter(d => d.type === "pdf");
+//     for (let index = 1; index < filteredData.length; index++) {
+//       const element = filteredData[index];
+//       setTimeout(() => {
+//         console.log(element.name)
+//       }, 1000 * index);
+//     }
+//   })
 
 
-
+function printName(name, ms = 1000) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log(name)
+      resolve(4)
+    }, ms);
+  })
+}
 
 fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%208%20-%20Promise/materials/documents.json")
   .then(res => res.json())
-  .then(data => console.log(data))
+  .then(data => data.filter(d => d.type === "pdf"))
+  .then(filteredData => {
+    printName(filteredData[0].name)
+      .then(name => {
+        printName(filteredData[1])
+          .then(name => console.log("Finished"))
+      })
+  })
+
+async function printDocuments(url) {
+  let res = await fetch(url)
+  let data = await res.json()
+  let filteredData = data.filter(d => d.type === "pdf")
+
+  for (const doc of filteredData) {
+    let result = await printName(doc.name)
+  }
+}
+
+printDocuments("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%208%20-%20Promise/materials/documents.json")
+
+
+
+
+
+
+  // await printName(filteredData[0])
+  // await printName(filteredData[1])
+  // await printName(filteredData[2])
+  // filteredData.forEach(async e => {
+  //   await printName(e.name)
+  // })
