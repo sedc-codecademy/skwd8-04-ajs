@@ -188,7 +188,12 @@ async function printDocuments(url) {
   let res = await fetch(url)
   let data = await res.json()
   let filteredData = data.filter(d => d.type === "pdf")
-
+  // await printName(filteredData[0])
+  // await printName(filteredData[1])
+  // await printName(filteredData[2])
+  // filteredData.forEach(async e => {
+  //   await printName(e.name)
+  // })
   for (const doc of filteredData) {
     let result = await printName(doc.name)
   }
@@ -196,14 +201,3 @@ async function printDocuments(url) {
 
 printDocuments("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g3/Class%208%20-%20Promise/materials/documents.json")
 
-
-
-
-
-
-  // await printName(filteredData[0])
-  // await printName(filteredData[1])
-  // await printName(filteredData[2])
-  // filteredData.forEach(async e => {
-  //   await printName(e.name)
-  // })
