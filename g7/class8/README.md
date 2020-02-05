@@ -82,7 +82,7 @@ An ajax call to some documents online that returns a promise. When the promise i
 function  getDocuments(){
     return new Promise((resolve, reject)=>{
         $.ajax({
-            url:"https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json",
+            url:"https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g7/class8/documents.json",
             success: (response)=> {
                 resolve(JSON.parse(response));
             },
@@ -116,7 +116,7 @@ Promises can be chained. This means that we can ask for something, get a promise
 function  getDocuments(){
     return new Promise((resolve, reject)=>{
         $.ajax({
-            url:"https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json",
+            url:"https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g7/class8/documents.json",
             success: (response)=> {
                 resolve(JSON.parse(response));
             },
@@ -164,7 +164,7 @@ getDocuments()
 ### Using fetch
 fetch is arguably one of the easiest way to get data from the outside world and send requests. Basically we write fetch and write the address where we want to make a request. The fetch API makes a call for us and returns a promise. The promise contains the request that we sent. In order to extract our data from the request object we must first call the **.json()** method on the response and return it. Then we can get the data that we requested. 
 ```javascript
-fetch("https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json")
+fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g7/class8/documents.json")
 .then(response => response.json())
 .then(data => showDocuments(data))
 .catch(error => console.log(error.message))
@@ -176,7 +176,7 @@ Looking now at promises we can safely say that callbacks are not that fun any mo
 #### A simple fetch call with async/await
 ```javascript
 async function getDataFromFetch(){
-    let response = await fetch("https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json");
+    let response = await fetch("https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g7/class8/documents.json");
     let data = await response.json();
     console.log(data);
 }
