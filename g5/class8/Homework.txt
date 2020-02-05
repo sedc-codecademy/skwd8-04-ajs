@@ -1,0 +1,19 @@
+1. Using object destructing and a function make a reverse version of the following object
+
+let o = {
+	"image1": {"src": "http://url/image1.png"},
+	"image2": {"src": "http://url/image2.png"},
+	"image3": {"src": "http://url/image3.png"}
+}
+
+expected output is:
+
+{
+	"src": {
+		"image1": "http://url/image1.png",
+		"image2": "http://url/image2.png",
+		"image3": "http://url/image3.png"
+	}
+}
+
+2. Using previous object, extract all src paths to an array, and using array destruction get the first url to a variable.

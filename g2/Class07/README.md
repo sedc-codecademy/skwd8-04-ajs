@@ -1,6 +1,6 @@
 # Javascript under the hood &#x1F34E;
 ## Where and how is my JS code running?
-Modern javascript runs most of the time in the browser. This means that it gets executed and lives in the browser, by the browser engine and compiler. This is really important because javascript was not aways compiled and refined like it is today. Today we don't just execute javascript, but our scripts actually work with the browser hand in hand to load modern web pages. Javascript works in one thread. This means that there is only one stack or queue for code or tasks to be executed and they are beeing executed one by one. When we execute some functions they go to the top of the stack, they get executed and go out of the stack one by one. But what if one of those function is waiting for some response from the internet? Basically all functions after that should just wait for the function that waits for the call to finish right? Well this will freeze our web page, and we don't want our page frozen on every call we make. That is why javascript delegates waiting tasks to the browser. 
+Modern javascript runs most of the time in the browser. This means that it gets executed and lives in the browser, by the browser engine and compiler. This is really important because javascript was not always compiled and refined like it is today. Today we don't just execute javascript, but our scripts actually work with the browser hand in hand to load modern web pages. Javascript works in one thread. This means that there is only one stack or queue for code or tasks to be executed and they are being executed one by one. When we execute some functions they go to the top of the stack, they get executed and go out of the stack one by one. But what if one of those function is waiting for some response from the internet? Basically all functions after that should just wait for the function that waits for the call to finish right? Well this will freeze our web page, and we don't want our page frozen on every call we make. That is why javascript delegates waiting tasks to the browser. 
 
 ![javascript under the hood](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class6/img/javascriptandbrowser.png?raw=true)
 1. **JavaScript engine** 
@@ -11,11 +11,11 @@ Modern javascript runs most of the time in the browser. This means that it gets 
 4. **Event Loop** - A mechanism that checks if the stack is empty, and when it is pushes a task ( callback ) from the event queue on to the stack to be executed
 
 ## Working with the browser
-In the browser there are a lot of mechanisms for running our code smoothly. As we said there is a stack in the engine for running our code. There are also some helper APIs or services that help our code. These are the DOM, that help us map objects from our HTML, an HTTP client for making AJAX calls, services for waiting some ammount of time or repeating some code in some interval etc. When a task that needs waiting comes to the stack like an AJAX call the stack throws it out of the stack in to the browser service. There it waits for a response and our stack can continue making calls. When it is done it throws the code that needs to be executed from the AJAX call in a queue called task queue or callback queue.  A mechanism called the event loop stands between the stack where our code is executed and it's job is to check if the queue is empty and when it is, to put the code that is next in line from the callback queue in to the stack so it can be executed. After our stack is empty ( all tasks are executed in the stack ) our event loop gets the AJAX code and puts it in the stack so it can be executed. 
+In the browser there are a lot of mechanisms for running our code smoothly. As we said there is a stack in the engine for running our code. There are also some helper APIs or services that help our code. These are the DOM, that help us map objects from our HTML, an HTTP client for making AJAX calls, services for waiting some amount of time or repeating some code in some interval etc. When a task that needs waiting comes to the stack like an AJAX call the stack throws it out of the stack in to the browser service. There it waits for a response and our stack can continue making calls. When it is done it throws the code that needs to be executed from the AJAX call in a queue called task queue or callback queue.  A mechanism called the event loop stands between the stack where our code is executed and it's job is to check if the queue is empty and when it is, to put the code that is next in line from the callback queue in to the stack so it can be executed. After our stack is empty ( all tasks are executed in the stack ) our event loop gets the AJAX code and puts it in the stack so it can be executed. 
 #### setTimeout
 Will execute a function passed as an argument when a given time passes. The second parameter of this function is how many milliseconds do we actually want to wait, or delay some code. 
 ```javascript
-	// with annon function
+	// with anonymous function
 	setTimeout(function(){ console.log("This happens later!")}, 2000);
 	// with arrow function
 	setTimeout(()=>  console.log("This happens later!"), 2000);
@@ -62,11 +62,11 @@ console.log(result);
 All callback functions from our code go to the corresponding browser API and then when it is done it goes to this queue. Then it waits its turn to get on the stack and get executed. This include callbacks from event handlers such as click events ( when clicking a button the callback we attached to the handler comes here in the callback queue ), waiting on calls from an AJAX request, waiting on a setTimeout etc. 
 
 ## Synchronous and asynchronous executing
-So as you can tell, javasript does not want to wait on code. Every piece of code that it knows it has to wait, it just delegates it to the browser and it continues its execution. This means that even tho we can write code in a certain order, javascript will not guarantee us that it will execute it by the order that we wrote it in. This for the most part is good, our page doesn't freeze when it waits for something and we can get the data we asked for later anyways. This is called: executing our code asynchronously. But what happens when we need our code to be running in a certain order? 
+So as you can tell, javascript does not want to wait on code. Every piece of code that it knows it has to wait, it just delegates it to the browser and it continues its execution. This means that even tho we can write code in a certain order, javascript will not guarantee us that it will execute it by the order that we wrote it in. This for the most part is good, our page doesn't freeze when it waits for something and we can get the data we asked for later anyways. This is called: executing our code asynchronously. But what happens when we need our code to be running in a certain order? 
 #### two function calls in order
 ```javascript
 function first(){
-	console.log("Frst thing!");
+	console.log("First thing!");
 } 
 function second(){
 	console.log("Second thing");
