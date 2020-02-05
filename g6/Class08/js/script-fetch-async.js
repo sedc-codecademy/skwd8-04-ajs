@@ -3,27 +3,24 @@
 document.querySelector('button')
         .addEventListener('click', () => {
             let personId = document.getElementById('personId').value;
+            
+            getDataAsync(personId);
 
-            callApi(`https://swapi.co/api/people/${personId}/`, (person) => {
-                displayPerson(person);
-                callApi(person.species, (species) => 
-                                document.getElementById('speciesNameContainer')
-                                        .innerHTML = species.name);
-                callApi(person.films[0], (film) => console.log(film));
-            });
+            async function getDataAsync(personId) {
+                try {
+                    let response = await fetch(`https://swapi.co/api/people/${personId}/`);
+                    let person = response.json();
+                    displayPerson(person);
+                    
+                    let speciesResponse = await fetch(person.species);
+                    let species = speciesResponse.json();
+                    document.getElementById('speciesNameContainer')
+                            .innerHTML = species.name;
+                } catch (error) {
+                    console.log(error);
+                }
+            }
         });
-
-        function callApi(url, callback) {
-            let xmlHttpRequest = new XMLHttpRequest();
-            xmlHttpRequest.onload = function () {
-                let response = xmlHttpRequest.response;
-                console.log(response);
-                let dataParsed = JSON.parse(response);
-                callback(dataParsed);
-            };
-            xmlHttpRequest.open('GET', url);
-            xmlHttpRequest.send();
-        }
 
 function displayPerson(person) {
     document.getElementById('personNameContainer').innerHTML = person.name;
