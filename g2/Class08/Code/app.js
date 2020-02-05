@@ -1,6 +1,6 @@
 function simple() {
     setTimeout(function () {
-        console.log("1. Firsth thing prepearing for second.");
+        console.log("1. First thing preparing for second.");
         setTimeout(function () {
             console.log("2. Second thing");
         }, 2000)
@@ -12,15 +12,15 @@ function simple() {
 
 function complex() {
     setTimeout(() => {
-        console.log("1. First thing prepearing for second.");
+        console.log("1. First thing preparing for second.");
         setTimeout(() => {
-            console.log("2. Second thing prepearing for third.");
+            console.log("2. Second thing preparing for third.");
             setTimeout(() => {
-                console.log("3. Third thing prepearing for fourth.");
+                console.log("3. Third thing preparing for fourth.");
                 setTimeout(() => {
-                    console.log("4. Fourth thing prepearing for fifth.");
+                    console.log("4. Fourth thing preparing for fifth.");
                     setTimeout(() => {
-                        console.log("5. Fifth thing prepearing for sixth.");
+                        console.log("5. Fifth thing preparing for sixth.");
                         setTimeout(() => {
                             console.log("6. Sixth and last thing.");
                         }, 1000);
@@ -41,7 +41,7 @@ function first(workTime) {
             reject("The working time must be greater than zero.");
         } else {
             setTimeout(() => {
-                resolve("First thing prepearing for second.");
+                resolve("First thing preparing for second.");
             }, workTime);
         }
     })
@@ -58,7 +58,7 @@ function second() {
 //         second();
 //     })
 //     .catch(err => console.log("ERROR: " + err))
-//     .finally(() => console.log(`Evertything done in ${Math.round(performance.now())} ms.`));
+//     .finally(() => console.log(`Everything done in ${Math.round(performance.now())} ms.`));
 
 
 
@@ -146,18 +146,18 @@ async function getDataFromApiAsync() {
 
 // getDataFromApiAsync();
 
-// console.log("This will be executed syncronously");
+// console.log("This will be executed synchronously");
 
 
 const runFunctions = async () => {
 
-try {
-    console.log(await first(0));
-    second();
-    console.log(`Evertything done in ${Math.round(performance.now())} ms.`);
-} catch (error) {
-    console.log(error);
-}
+    try {
+        console.log(await first(0));
+        second();
+        console.log(`Everything done in ${Math.round(performance.now())} ms.`);
+    } catch (error) {
+        console.log(error);
+    }
 
 
 
@@ -167,13 +167,13 @@ runFunctions();
 
 let currentLocation = window.location.href;
 
-async function showImportantDocs(){
+async function showImportantDocs() {
     let documents = await getDocuments();
     checkDocuments(documents);
     let importantDocs = await getImportantDocuments(documents);
-    new Toast({message: 'Finished', type: 'danger'});
+    new Toast({ message: 'Finished', type: 'danger' });
     showDocuments(importantDocs);
-    console.log(`Evertything done in ${Math.round(performance.now())} ms.`);
+    console.log(`Everything done in ${Math.round(performance.now())} ms.`);
 }
 
 showImportantDocs();
