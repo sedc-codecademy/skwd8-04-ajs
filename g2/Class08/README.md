@@ -226,3 +226,4 @@ catch(error){
 * [Async/Await by example](https://codeburst.io/javascript-es-2017-learn-async-await-by-example-48acc58bad65)
 * [Understanding Javascript Promises](https://flaviocopes.com/javascript-promises/)
 * [Another good piece about promises](https://hackernoon.com/understanding-promises-in-javascript-13d99df067c1)
+* [Some more advanced async/await video](https://www.youtube.com/watch?v=vn3tm0quoqE)
