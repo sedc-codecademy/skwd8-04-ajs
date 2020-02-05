@@ -1,27 +1,26 @@
 # Exercise
-## Get bordering countries function
-* Call the countries API for a country  by code.
-* Create a function that gets all the neighbours from a country and returns them in console
-* When the call to the countires API for a country is made imidietly show the bordering countries in the console
+## Print all documents
+* Get all documents from documents.json file.
+* Filter all pdf documents
+* Print all documents names each after 1 second, using all three "async" methods (callback-hell, promise, async-await)
 
 Example:
 
-Call -> MKD
+Call -> documents.json
 
 In console:
 
-Conutry:
+```<after 0 seconds>```
+importantDocument
 
-macedonia object
+```<after 1 second>```
+someDocument
 
-Neighbours:
+```<after 2 seconds>```
+workDocument
 
-albania object
+```<after 3 seconds>```
+anotherDocument
 
-greece object
-
-bulgaria object
-
-serbia object
-
-[CountriesApi](https://restcountries.eu/);
+```<after n seconds>```
+nDocument
