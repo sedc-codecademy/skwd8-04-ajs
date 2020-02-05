@@ -4,26 +4,23 @@ document.querySelector('button')
         .addEventListener('click', () => {
             let personId = document.getElementById('personId').value;
 
-            callApi(`https://swapi.co/api/people/${personId}/`, (person) => {
-                displayPerson(person);
-                callApi(person.species, (species) => 
-                                document.getElementById('speciesNameContainer')
-                                        .innerHTML = species.name);
-                callApi(person.films[0], (film) => console.log(film));
-            });
+            function parseJson(data){
+                return data.json();
+            }
+            fetch(`https://swapi.co/api/people/${personId}/`)
+                .then(parseJson)
+                .then((person) => {
+                    displayPerson(person);
+                    
+                    fetch(person.species) 
+                        .then(parseJson)
+                        .then(species => {
+                            document.getElementById('speciesNameContainer')
+                                    .innerHTML = species.name;
+                        });
+                })
+                .catch(error => console.log(error));
         });
-
-        function callApi(url, callback) {
-            let xmlHttpRequest = new XMLHttpRequest();
-            xmlHttpRequest.onload = function () {
-                let response = xmlHttpRequest.response;
-                console.log(response);
-                let dataParsed = JSON.parse(response);
-                callback(dataParsed);
-            };
-            xmlHttpRequest.open('GET', url);
-            xmlHttpRequest.send();
-        }
 
 function displayPerson(person) {
     document.getElementById('personNameContainer').innerHTML = person.name;
