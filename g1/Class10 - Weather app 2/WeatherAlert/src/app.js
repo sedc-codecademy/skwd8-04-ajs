@@ -4,6 +4,7 @@ const searchInput = document.getElementById('citySearchInput');
 const navItems = document.getElementsByClassName('nav-item');
 const pages = document.getElementById('pages').children;
 const statisticsResult = document.getElementById('statisticsResult');
+const tableResult = document.getElementById('tableResult');
 
 // Events
 searchButton.addEventListener('click', () => {
@@ -23,6 +24,7 @@ let getData = city => {
     .then(res => {
       console.log(res);
       loadStatistics(res);
+      loadHourlyData(res);
     })
     .catch(error => console.log(error));
 };
@@ -110,6 +112,27 @@ function loadStatistics(data) {
   <h3>Warmest time of the following period: ${s.warmestTime}</h3>
   <h3>Coldest time of the following period: ${s.coldestTime}</h3>
   `;
+}
+
+function loadHourlyData(data) {
+  ``;
+  tableResult.innerHTML = '';
+  for (const item of data.list) {
+    tableResult.innerHTML += `
+    <div class="row">
+      <div class="col-md-2">
+        <img src="http://openweathermap.org/img/w/${item.weather[0].icon}.png" alt="logo" />
+      </div>
+      <div class="col-md-2">${item.weather[0].description}</div>
+      <div class="col-md-2">${new Date(item.dt * 1000).toUTCString()}</div>
+      <div class="col-md-2">${item.main.temp.toFixed(0)}C (${item.main.feels_like.toFixed(
+      0
+    )}C)</div>
+      <div class="col-md-2">${item.main.humidity}%</div>
+      <div class="col-md-2">${item.wind.speed}km/h</div>
+    </div>
+    `;
+  }
 }
 
 registerNavListeners();
