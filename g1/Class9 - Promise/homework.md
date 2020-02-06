@@ -2,7 +2,7 @@
 
 ## Task 1:
 
-1. Write a function testNumber() that takes a number as an argument and returns a Promise that tests if the value is less than or greater than the value 10. If it is, it's successful, if not it should be rejected. (The function should wait at least 2 seconds to do the calculation).
+1. Write a function testNumber() that takes a number as an argument and returns a Promise that tests if the value is less than or equal to 10. If it is, it's successful, if not it should be rejected. (The function should wait at least 2 seconds to do the calculation).
 
 ## Task 2:
 
