@@ -1,228 +1,175 @@
-# Asynchronous &#x1F34E;
-## Solving problems with callback functions
-With callbacks we can control the flow of our code and be sure that our code will execute in some particular order. This is helping us write reliable code and handle different kind of problems regarding dependency ( entities depending on each other completion ). But with this method of solving these issues, we run in to a different kind of a problem. If we have a lot of dependencies and we write a huge chain of callbacks we get an unorganised and hard to read code. 
-#### Simple example
-In simple examples we don't really see the problem. In this case we have two things that need to happen in a certain order. 
+# Javascript under the hood &#x1F34E;
+## Where and how is my JS code running?
+Modern javascript runs most of the time in the browser. This means that it gets executed and lives in the browser, by the browser engine and compiler. This is really important because javascript was not aways compiled and refined like it is today. Today we don't just execute javascript, but our scripts actually work with the browser hand in hand to load modern web pages. Javascript works in one thread. This means that there is only one stack or queue for code or tasks to be executed and they are beeing executed one by one. When we execute some functions they go to the top of the stack, they get executed and go out of the stack one by one. But what if one of those function is waiting for some response from the internet? Basically all functions after that should just wait for the function that waits for the call to finish right? Well this will freeze our web page, and we don't want our page frozen on every call we make. That is why javascript delegates waiting tasks to the browser. 
+
+![javascript under the hood](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class6/img/javascriptandbrowser.png?raw=true)
+1. **JavaScript engine** 
+	1.1 **Memory Heap** - A region in memory used for storing values and other types of data in an ordered fashion
+	1.2 **Call Stack** - A structure where our functions are queued for running. It fills with tasks and it executes them in order LIFO ( Last In First Out )
+2. **Browser APIs** - The browser APIs that help javascript run smoothly and without clogging. 
+3.  **Even Queue** - A queue that holds the results of the browsers APIs ( callbacks ) until they are added to the stack and executed. The order of giving out these callbacks is FIFO ( First In First Out )
+4. **Event Loop** - A mechanism that checks if the stack is empty, and when it is pushes a task ( callback ) from the event queue on to the stack to be executed
+
+## Working with the browser
+In the browser there are a lot of mechanisms for running our code smoothly. As we said there is a stack in the engine for running our code. There are also some helper APIs or services that help our code. These are the DOM, that help us map objects from our HTML, an HTTP client for making AJAX calls, services for waiting some ammount of time or repeating some code in some interval etc. When a task that needs waiting comes to the stack like an AJAX call the stack throws it out of the stack in to the browser service. There it waits for a response and our stack can continue making calls. When it is done it throws the code that needs to be executed from the AJAX call in a queue called task queue or callback queue.  A mechanism called the event loop stands between the stack where our code is executed and it's job is to check if the queue is empty and when it is, to put the code that is next in line from the callback queue in to the stack so it can be executed. After our stack is empty ( all tasks are executed in the stack ) our event loop gets the AJAX code and puts it in the stack so it can be executed. 
+#### setTimeout
+Will execute a function passed as an argument when a given time passes. The second parameter of this function is how many milliseconds do we actually want to wait, or delay some code. 
 ```javascript
-function simple() {
-  setTimeout(function() {
-    console.log('1. First thing, preparing for the second');
-    setTimeout(function() {
-      console.log('2. Second thing');
-    }, 2000);
-  }, 2000);
-};
+	// with annon function
+	setTimeout(function(){ console.log("This happens later!"}, 2000);
+	// with arrow function
+	setTimeout(()=>  console.log("This happens later!"), 2000);
 ```
-#### Complex example
-But in more complex examples we can see what happens. A huge wave of code that is hard to examine and read. 
+#### setInterval
+Will execute a function passed as an argument when a given time passes. The second parameter of this function is how many milliseconds do we actually want to wait, or delay some code. 
 ```javascript
-function complex() {
-  setTimeout(function() {
-    console.log('1. First thing, preparing for the second');
-    setTimeout(function() {
-      console.log('2. Second thing, preparing for the third');
-      setTimeout(function() {
-	    console.log('3. Third thing, preparing for the forth');
-	    setTimeout(function() {
-		  console.log('4. Forth thing, preparing for the fifth');
-		  setTimeout(function() {
-		    console.log('5. Fifth thing, preparing for the Sixth');
-		    setTimeout(function() {
-		      console.log('6. Sixth and last thing');
-		    }, 2000);
-	      }, 2000);
-	    }, 2000);
-	  }, 2000);
-    }, 2000);
-  }, 2000);
-};
+	setInterval(()=>  console.log("This happens every two seconds!"), 2000)
 ```
-This phenomena has many names. Callback Hell, Hadouken programming, Pyramid of doom among the many.  
 
-## Better solution: Promises 
-In 2015 javascript developers finally got the highly anticipated feature, promise. Promises are basically a more elegant and sophisticated way of waiting on things. When we know that we have to wait for some kind of data we create a Promise object and put it as a placeholder for the data that we need. The promise then goes through it's states that represent the status of the data that we need. A promise can be in one of 3 states in any point in time. 
-1. Pending
-2. Fulfilled
-3. Rejected
-
-When we wait for our data, the promise is in the pending state. The moment we get a result of our request for the data, the state will change either to Fulfilled or Rejected depending on the data that we get. If we successfully get the data, the promise state will turn in to Fulfilled and the promise will execute the methods that we have written to handle the requested data. If we don't get the data that we need or there were some problems in the process of acquiring the data, the  state will change to Rejected and the promise the code that we have written when expecting problems and errors. 
-### Handling promises
-The cool thing about promises is that we don't have to write code inside the promise to have something executed in a particular order ( Synchronously ). We can write the function that returns the promise and then call methods that will be executed after the promise is resolved or rejected. 
-* myFunction()**.then**( data => ...handling the data ) - a function that is executed when a promise is resolved and accepts a callback with a parameter in which the data from the resolved promise is stored.
-* myFunction().then(...)**.catch**( error => ...handling error ) - a function that is executed when a promise is rejected and accepts a callback with a parameter in which the error message from the rejected promise is stored. This can also be executed if there is an exception or error while executing the code in the .then() function.
-* myFunction().then(...).catch(...).**finally**(()=>... some code) - a function that is executed at the end of the whole resolve chain. This function is executed always no matter if the promise is resolved or rejected and has no parameters. 
-#### A simple promise
-A simple promise that waits for the first function to finish so it can execute second.
+#### a simple piece of code
 ```javascript
-function first(workTime){
-  return new Promise((resolve, reject)=>{
-    if(workTime <= 0){
-      reject("It's too short of a work time. Please try again!");
-    }
-    setTimeout(() => {
-      resolve("First thing, preparing for the second");
-    }, workTime);
-  })
-}
+let  cb1  = () =>  console.log("cb1");
 
+console.log("Hi");
+setTimeout(cb1 , 1000);
+console.log("Bye");
+```
+**Result:**
+
+Hi
+
+Bye
+
+cb1
+
+#### behind the scenes
+![behind the scenes](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class6/img/eventloop.gif?raw=true)
+
+## Callback functions
+Callback functions are functions that are executed inside of other functions ( usually after the execution of the other, parent function ). Since javascript executes line by line and throws functions out of the stack when we have to wait for them, it is easy to see that sometimes we would need a system that actually executes the code in our defined order. This is where callbacks come to the picture. If we want to be sure that a function is executed after another, then we just pass that function as an argument to the first one. That way when the first one completes inside of it we call the second one. This way we keep the order of execution. 
+
+#### simple callback function
+```javascript
+function calculate(callback, num1, num2){
+	console.log("calculating...");
+	return callback(num1,num2);
+};
+let result = calculate((x, y) => x + y, 2, 5);
+console.log(result);
+```
+#### event ( callback ) queue
+![event queue](https://github.com/sedc-codecademy/sedc7-04-ajs/blob/master/g2/Class6/img/callbackqueue.png?raw=true)
+All callback functions from our code go to the corresponding browser API and then when it is done it goes to this queue. Then it waits its turn to get on the stack and get executed. This include callbacks from event handlers such as click events ( when clicking a button the callback we attached to the handler comes here in the callback queue ), waiting on calls from an AJAX request, waiting on a setTimeout etc. 
+
+## Synchronous and asynchronous executing
+So as you can tell, javasript does not want to wait on code. Every piece of code that it knows it has to wait, it just delegates it to the browser and it continues its execution. This means that even tho we can write code in a certain order, javascript will not guarantee us that it will execute it by the order that we wrote it in. This for the most part is good, our page doesn't freeze when it waits for something and we can get the data we asked for later anyways. This is called: executing our code asynchronously. But what happens when we need our code to be running in a certain order? 
+#### two function calls in order
+```javascript
+function first(){
+	console.log("Frst thing!");
+} 
 function second(){
-  console.log("second thing!");
+	console.log("Second thing");
 }
-first(1000)
-.then(success => {
-	console.log(success);
-	second();
-	})
-.catch(error => console.log(`ERROR: ${error}`))
-.finally(()=> console.log(`Everything is done at: ${new Date()}`))
-```
-#### Handling AJAX call with a promise
-An ajax call to some documents online that returns a promise. When the promise is resolved ( the ajax call is over ) we call the show documents function with the documents.
-```javascript
-function  getDocuments(){
-    return new Promise((resolve, reject)=>{
-        $.ajax({
-            url:"https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json",
-            success: (response)=> {
-                resolve(JSON.parse(response));
-            },
-            error: (error)=> {
-                reject(error);
-            }
-        })
-    })
-}
-function showDocuments(documents){
-    if(!documents && typeof(documents) != "object"){
-        throw new Error("Problem with documents!");
-    }
-    if(documents.length === 0){
-        throw new Error("There is no documents!")
-    }
-    documents.forEach(doc => {
-        console.log(`${doc.name}.${doc.type} (${doc.size}mb)`);
-    });
-}
-getDocuments()
-.then(data => {
-    console.log("We got the documents!");
-    showDocuments(data);
-})
-.catch(error => console.log(error.message));
-```
-#### Chaining promises
-Promises can be chained. This means that we can ask for something, get a promise as a result and then add another **then** and wait for that promise next. This way we can wait for multiple things in a certain order.
-```javascript
-function  getDocuments(){
-    return new Promise((resolve, reject)=>{
-        $.ajax({
-            url:"https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json",
-            success: (response)=> {
-                resolve(JSON.parse(response));
-            },
-            error: (error)=> {
-                reject(error);
-            }
-        })
-    })
-}
-function getImportantDocuments(documents){
-    let importantDocuments = documents.filter(doc => doc.important);
-    return new Promise((resolve, reject)=>{
-        if(importantDocuments.length === 0){
-          reject("There are no important documents!");
-        }
-        setTimeout(() => {
-          resolve(importantDocuments);
-        }, 3000);
-    })
-}
-function checkDocuments(documents){
-    if(!documents || typeof(documents) != "object"){
-        throw new Error("Problem with documents!");
-    }
-    if(documents.length === 0){
-        throw new Error("There is no documents!")
-    }
-}
-function showDocuments(documents){
-    documents.forEach(doc => {
-        console.log(`${doc.name}.${doc.type} (${doc.size}mb)`);
-    });
-}
-getDocuments()
-.then(data => {
-    console.log("We got the documents!");
-    checkDocuments(data);
-    return getImportantDocuments(data);
-})
-.then(data =>{
-   showDocuments(data);
-})
-.catch(error => console.log(error.message));
-```
-### Using fetch
-fetch is arguably one of the easiest way to get data from the outside world and send requests. Basically we write fetch and write the address where we want to make a request. The fetch API makes a call for us and returns a promise. The promise contains the request that we sent. In order to extract our data from the request object we must first call the **.json()** method on the response and return it. Then we can get the data that we requested. 
-```javascript
-fetch("https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json")
-.then(response => response.json())
-.then(data => showDocuments(data))
-.catch(error => console.log(error.message))
-.finally(()=> console.log("Everything is done at: " + new Date()));
-```
-## Async/await
-Looking now at promises we can safely say that callbacks are not that fun any more. We can do the same but quicker and more organised with promises. But in 2016 along with ES7 came another even nicer looking feature in javascript that help us solve the problem with waiting for data and executing code in particular order. This is the async/await feature and it works on top of the feature we discussed previously, promises. Basically, we create a **function** and we write **async** before it. This makes the function asynchronous, meaning that some code inside of it can wait until it is ready without blocking the whole execution stack. If we want to wait on some function ( that returns promise, because it works with promises ) we only write **await** before the function call that has a result promise. Then the function waits on that result and then continues with the code inside that function. The code outside of the function is executed as normal ( doesn't wait for the await inside the async function ).
+first();
+second();
+``` 
+**Result:**
 
-#### A simple fetch call with async/await
-```javascript
-async function getDataFromFetch(){
-    let response = await fetch("https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json");
-    let data = await response.json();
-    console.log(data);
-}
-getDataFromFetch();
-```
+First thing
 
-#### An example of the first-second exercise with async/await
-```javascript
-async function runFunctions(){
-    console.log(await first(2000)); // 2
-    second(); // 4
-    console.log(`Everything is done at: ${new Date()}`); // 5
-}
-runFunctions(); // 1
-console.log("This does not wait for the async function to finish!"); // 3
-```
+Second thing
 
-#### An example of the documents example with async/await
+#### two function calls but the first is delayed
 ```javascript
-async function showImportantDocuments(){
-    let startTime = new Date().getTime(); // 2
-    let documents = await getDocuments(); // 3
-    checkDocuments(documents); // 5
-    let importantDocs = await getImportantDocuments(documents); // 6
-    showDocuments(importantDocs); // 7
-    console.log(`Done in: ${( new Date().getTime() - startTime) / 1000}s`); // 8
+function first(){
+	setTimeout(()=>console.log("First thing"),1000);
+} 
+function second(){
+	console.log("Second thing!");
 }
-
-showImportantDocuments(); // 1
-console.log("This does not wait for the async function to finish!"); // 4
+first();
+second();
 ```
+**Result:**
 
-### Bonus: Error handling in javascript
-When handling errors, in promises we used the catch function to catch any errors that might happen in the then method or if the promise changed it's state to rejected. But we can also handle errors outside of the promises. We do that with the try/catch block. The try/catch block is an error handling method used not only in javascript but in other languages as well. It works pretty simple. There are two blocks where we need to write code. The first is the **try** block. In it we write our code and logic. That code will be observed and when error strikes, it is delegated in the other block called **catch**. The catch block accepts an error parameter and in it, the error that we get is stored. We can then handle the error in any way we see fit.
+Second thing
+
+First thing
+
+#### two function calls but the first is delayed ( solved with a callback )
 ```javascript
-try{
-  showImportantDocuments();
-  console.log("This does not wait for the async function to finish!");
+function  first(callback){
+	setTimeout(()=>{
+		console.log("First thing");
+		callback();
+	},1000);
 }
-catch(error){
-  console.log(error);
+function  second(){
+	console.log("Second thing!");
 }
+first(second);
 ```
+**Result:**
+
+First thing
+
+Second thing
+
+#### making an ajax call
+```javascript
+function  makeCall(url){
+	$.ajax({
+		url:  url,
+		success:  function (response) {
+			console.log('The request succeeded!');
+			return  response;
+		},
+		error:  function(response){
+			console.log('The request failed!');
+			return  response.responseText;
+		}
+	});
+}
+function  print(results){
+	console.log(results);
+}
+print(makeCall("https://swapi.co/api/people/1/"));
+```
+**Result:**
+
+undefined
+
+The request succeeded!
+
+#### making an ajax call with a callback
+```javascript
+function  makeCall(url, callback){
+	$.ajax({
+		url:  url,
+		success:  function (response) {
+			console.log('The request succeeded!');
+			callback(response)
+		},
+		error:  function(response){
+			console.log('The request failed!');
+			callback(response.responseText);
+		}
+	});
+}
+function  print(results){
+	console.log(results);
+}
+makeCall("https://swapi.co/api/people/1/", print);
+```
+**Result:**
+
+The request succeeded!
+
+{our response}
 
 ## Extra materials &#x1F4D9;
-* [From callback hell to async/await](https://blog.hellojs.org/asynchronous-javascript-from-callback-hell-to-async-and-await-9b9ceb63c8e8)
-* [Async/Await by example](https://codeburst.io/javascript-es-2017-learn-async-await-by-example-48acc58bad65)
-* [Understanding Javascript Promises](https://flaviocopes.com/javascript-promises/)
-* [Another good piece about promises](https://hackernoon.com/understanding-promises-in-javascript-13d99df067c1)
+* [Very usefull tool](http://latentflip.com/loupe/)
+* [How does the event loop work](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5)
+* [Callbacks explained](https://www.sitepoint.com/callbacks-javascript/)
+* [Amazing video about the event loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
