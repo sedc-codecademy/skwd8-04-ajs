@@ -37,10 +37,87 @@ function notification(text){
 // The result inside of the anonymousFunction is the result we get from the promise resolve 
 // .catch(anonymousFunction(result)) - When the promise is rejected OR if there is any error or issue regarding the promise or Then
 // error - parameter that will put the reject data in it
-work(1000).then((result) => {
-    console.log("The promise is resolved!");
-    notification(result);
-}).catch((error) =>{
-    console.log("The promise is rejected!");
-    notification(error);
-})
+
+// work(1000).then((result) => {
+//     console.log("The promise is resolved!");
+//     notification(result);
+// }).catch((error) =>{
+//     console.log("The promise is rejected!");
+//     notification(error);
+// })
+
+// HANDLING AJAX CALLS WITH PROMISES
+let documentsUrl = "https://raw.githubusercontent.com/sedc-codecademy/skwd8-04-ajs/master/g7/class8/documents.json";
+
+function getDocuments(){
+    // resolve is always first paramter and reject second
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: documentsUrl,
+            success: (response) => {
+                // We can use resolve anywhere we are sure that we can get the data we have been waiting for
+                resolve(JSON.parse(response));
+            },
+            error: (error) => {
+                reject(error);
+            }
+        })
+    })
+}
+
+function showDocuments(documents){
+    // Validation for the document types 
+    if(!documents && typeof(documents) != "object"){
+        // We create a new error and it will show in the console as any other error
+        // Important to write a good description
+        throw new Error("Issue with the documents!");
+    }
+    if(documents.length === 0){
+        throw new Error("No documents to be found!");
+    }
+    documents.forEach(doc => {
+        console.log(`${doc.name}.${doc.type} (${doc.size}MB)`);
+    });
+}
+
+// getDocuments().then((documents) => {
+//     console.log("The server responded OK!");
+//     showDocuments(documents);
+// }).catch((error) => console.log(error));
+
+// fetch 
+// fetch(documentsUrl)
+// .then(response => response.json())
+// .then((documents) => {
+//     console.log("The server responded OK!");
+//     showDocuments(documents);
+// })
+// .catch((error) => console.log(error))
+// .finally(() => console.log(`The promise is fulfilled at ${new Date()}`));
+
+// ASYNC / AWAIT
+// await must be inside an async function
+// await must be used with a function that returns a promise
+async function showImportantDocuments(){
+    // Here we have the response object as a result
+    let response = await fetch(documentsUrl); 
+    // console.log("RESPONSE:");
+    // console.log(response);
+
+    // Here we have the response data as a result
+    let documents = await response.json();
+    // console.log("DOCUMENTS:");
+    // console.log(documents);
+
+    let important = documents.filter(doc => doc.important);
+    showDocuments(important);
+    return important;
+}
+
+try{
+    let docs = showImportantDocuments();
+    console.log(docs);
+    docs.then((result) => console.log(result));
+} catch(err){
+    console.log(err);
+}

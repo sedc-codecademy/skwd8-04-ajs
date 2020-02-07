@@ -1,6 +1,6 @@
 # Asynchronous &#x1F34E;
 ## Solving problems with callback functions
-With callbacks we can control the flow of our code and be sure that our code will execute in some particular order. This is helping us write reliable code and handle different kind of problems regarding dependency ( entities depending on each other completion ). But with this method of solving these issues, we run in to a different kind of a problem. If we have a lot of dependencies and we write a huge chain of callbacks we get an unorganized and hard to read code. 
+With callbacks we can control the flow of our code and be sure that our code will execute in some particular order. This is helping us write reliable code and handle different kind of problems regarding dependency ( entities depending on each other completion ). But with this method of solving these issues, we run in to a different kind of a problem. If we have a lot of dependencies and we write a huge chain of callbacks we get an unorganised and hard to read code. 
 #### Simple example
 In simple examples we don't really see the problem. In this case we have two things that need to happen in a certain order. 
 ```javascript
@@ -171,7 +171,7 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/
 .finally(()=> console.log("Everything is done at: " + new Date()));
 ```
 ## Async/await
-Looking now at promises we can safely say that callbacks are not that fun any more. We can do the same but quicker and more organized with promises. But in 2016 along with ES7 came another even nicer looking feature in javascript that help us solve the problem with waiting for data and executing code in particular order. This is the async/await feature and it works on top of the feature we discussed previously, promises. Basically, we create a **function** and we write **async** before it. This makes the function asynchronous, meaning that some code inside of it can wait until it is ready without blocking the whole execution stack. If we want to wait on some function ( that returns promise, because it works with promises ) we only write **await** before the function call that has a result promise. Then the function waits on that result and then continues with the code inside that function. The code outside of the function is executed as normal ( doesn't wait for the await inside the async function ).
+Looking now at promises we can safely say that callbacks are not that fun any more. We can do the same but quicker and more organised with promises. But in 2016 along with ES7 came another even nicer looking feature in javascript that help us solve the problem with waiting for data and executing code in particular order. This is the async/await feature and it works on top of the feature we discussed previously, promises. Basically, we create a **function** and we write **async** before it. This makes the function asynchronous, meaning that some code inside of it can wait until it is ready without blocking the whole execution stack. If we want to wait on some function ( that returns promise, because it works with promises ) we only write **await** before the function call that has a result promise. Then the function waits on that result and then continues with the code inside that function. The code outside of the function is executed as normal ( doesn't wait for the await inside the async function ).
 
 #### A simple fetch call with async/await
 ```javascript
@@ -226,4 +226,3 @@ catch(error){
 * [Async/Await by example](https://codeburst.io/javascript-es-2017-learn-async-await-by-example-48acc58bad65)
 * [Understanding Javascript Promises](https://flaviocopes.com/javascript-promises/)
 * [Another good piece about promises](https://hackernoon.com/understanding-promises-in-javascript-13d99df067c1)
-* [Some more advanced async/await video](https://www.youtube.com/watch?v=vn3tm0quoqE)
