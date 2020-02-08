@@ -8,16 +8,25 @@ document.querySelector('button')
                 return data.json();
             }
             fetch(`https://swapi.co/api/people/${personId}/`)
-                .then(parseJson)
+                .then(response => {
+                    return parseJson(response);
+                })
                 .then((person) => {
                     displayPerson(person);
                     
-                    fetch(person.species) 
-                        .then(parseJson)
-                        .then(species => {
-                            document.getElementById('speciesNameContainer')
-                                    .innerHTML = species.name;
-                        });
+                    return Promise.resolve(person.species);
+                    // fetch(person.species) 
+                    //     .then(parseJson)
+                    //     .then(species => {
+                    //         document.getElementById('speciesNameContainer')
+                    //                 .innerHTML = species.name;
+                    //     });
+                })
+                .then(species => fetch(species))
+                .then(parseJson)
+                .then(species => {
+                    document.getElementById('speciesNameContainer')
+                            .innerHTML = species.name;
                 })
                 .catch(error => console.log(error));
         });

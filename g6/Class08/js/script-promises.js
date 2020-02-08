@@ -8,13 +8,13 @@ document.querySelector('button')
                 .then((person) => {
                     displayPerson(person);
                     //throw new Error('Something happen'); this will be catched by catch method
-                    callApi(person.species)
-                            .then((species) => 
+                    return callApi(person.species);
+                })
+                .then((species) => 
                                     document.getElementById('speciesNameContainer')
                                             .innerHTML = species.name)
-                            .catch(error => console.log(error));
-                })
-                .catch(error => console.log(error));
+                .catch(error => console.log(error))
+                .finally(() => console.log('This will be executed always'));
         });
 
         function callApi(url) {

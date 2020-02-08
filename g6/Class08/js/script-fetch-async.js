@@ -9,11 +9,11 @@ document.querySelector('button')
             async function getDataAsync(personId) {
                 try {
                     let response = await fetch(`https://swapi.co/api/people/${personId}/`);
-                    let person = response.json();
+                    let person = await response.json();
                     displayPerson(person);
                     
                     let speciesResponse = await fetch(person.species);
-                    let species = speciesResponse.json();
+                    let species = await speciesResponse.json();
                     document.getElementById('speciesNameContainer')
                             .innerHTML = species.name;
                 } catch (error) {
