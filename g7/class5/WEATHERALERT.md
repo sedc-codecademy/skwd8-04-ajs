@@ -8,9 +8,16 @@ The web page should be:
 * Logo and the name of the app in the navbar
 * Pages:
   * Home ( statistics page )
-    * Waiting for requirements
+    * Temperature ( Highest, Average, Lowest )
+    * Humidity ( Highest, Average, Lowest )
+    * Warmest and Coldest time of the days ahead
   * Hourly Weather( Table with data )
-    * Waiting for requirements
+    * Icon of weather
+    * Description of weather
+    * Date and Time
+    * Temperature
+    * Humidity
+    * Wind Speed
   * About
     * Text about the app
     * Text about creator
