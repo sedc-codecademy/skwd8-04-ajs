@@ -1,0 +1,12 @@
+#pages .page {
+    display: none;
+    text-align: center;
+}
+
+#pages .page:first-child {
+    display: block;
+}
+
+body {
+    background-image: url("img/background.png");
+}
