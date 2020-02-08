@@ -1,0 +1,8 @@
+#pages .page {
+    display: none;
+    text-align: center;
+}
+
+#pages .page:first-child {
+    display: block;
+}
