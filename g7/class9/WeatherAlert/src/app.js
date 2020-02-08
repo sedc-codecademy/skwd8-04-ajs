@@ -18,6 +18,7 @@ let navService = {
     registerNavListeners: function(){
         for(let i = 0; i < this.navItems.length; i++){
             this.navItems[i].addEventListener("click", function(){
+                // this in addEventListener points to the item that has the event listener
                 navService.activateItem(this);
                 navService.showPage(navService.pages[i]);
             })
@@ -51,4 +52,4 @@ let weatherService = {
 }
 
 navService.registerNavListeners();
-// console.log(weatherService.getData());
+console.log(weatherService.getData());
