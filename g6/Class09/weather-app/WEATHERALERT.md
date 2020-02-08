@@ -12,12 +12,12 @@ The web page should be:
     * Humidity ( Highest, Average, Lowest )
     * Warmest and Coldest time of the days ahead
   * Hourly Weather( Table with data )
-    * Icon of weather
-    * Description of weather
-    * Date and Time
-    * Temperature
-    * Humidity
-    * Wind Speed
+    * Icon of weather (create img element with src = `http://openweathermap.org/img/w/${list[n].weather[0].icon}.png`)
+    * Description of weather (list[n].weather[0].description)
+    * Date and Time (list[n].dt should be converted (new Date(1000* dt)))
+    * Temperature (list[n].main.temp)
+    * Humidity (list[n].main.humidity)
+    * Wind Speed (list[n].wind.speed)
   * About
     * Text about the app
     * Text about creator
