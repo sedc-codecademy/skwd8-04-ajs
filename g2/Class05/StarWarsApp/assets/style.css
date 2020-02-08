@@ -24,6 +24,7 @@ body {
 
 #btnNext, #btnPrev {
     display: none;
+    padding: 10px;
 }
 
 #loader {
