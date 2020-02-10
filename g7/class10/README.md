@@ -114,14 +114,14 @@ whatsThisTemplate.whatsThisFunc();
 **Destructuring simply implies breaking down a complex structure into simpler parts**. In JavaScript, this complex structure is usually an **object** or an **array**. With the destructuring syntax, you can extract smaller fragments from arrays (items) and objects (properties). Destructuring syntax can be used for variable declaration or variable assignment. You can also handle nested structures by using nested destructuring syntax. So if we add a simple example for destructuring an object it will look something like this:
 ```javascript
 let dog = {
-    dogName: "Bugsy",
-    dogColor: "Black",
-    dogAge: 4
+    name: "Bugsy",
+    color: "Black",
+    age: 4
     }
 //If we want to console our dog's object proerties we can do this:
-console.log(dog.dogName); //Bugsy
-console.log(dog.dogColor); //Black
-console.log(dog.dogAge); //4
+console.log(dog.name); //Bugsy
+console.log(dog.color); //Black
+console.log(dog.age); //4
 
 //If we use destructuring on our object it will look like:
 const {name, color, age} = dog;
