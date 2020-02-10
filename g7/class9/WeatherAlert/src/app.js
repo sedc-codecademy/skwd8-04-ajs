@@ -9,15 +9,16 @@ let navService = {
         }
         item.classList.add("active");
     },
-    showPage(page){
+    showPage: function(page){
         for (let pageElement of this.pages) {
             pageElement.style.display = "none";
         }
         page.style.display = "block";
     }, 
-    registerNavListeners(){
+    registerNavListeners: function(){
         for(let i = 0; i < this.navItems.length; i++){
             this.navItems[i].addEventListener("click", function(){
+                // this in addEventListener points to the item that has the event listener
                 navService.activateItem(this);
                 navService.showPage(navService.pages[i]);
             })
@@ -32,7 +33,7 @@ let navService = {
 }
 
 let weatherService = {
-    apiKey: "74e59f6374abe0d9b758877616ae443b",
+    apiKey: "74e59f6374abe0d9b758877616ae44ss",
     city: "skopje",
     apiUrl: "https://api.openweathermap.org/data/2.5/forecast",
     getData: function(){
