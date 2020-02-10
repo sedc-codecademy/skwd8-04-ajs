@@ -124,7 +124,7 @@ console.log(dog.color); //Black
 console.log(dog.age); //4
 
 //If we use destructuring on our object it will look like:
-const {name, color, age} = dog;
+let {name, color, age} = dog;
 console.log(name); //Bugsy
 console.log(color); //Black
 console.log(age); //4
@@ -135,7 +135,7 @@ So what is done in the previous example is that we declare an object and give to
 To explain the why of destructuring, it's better to look at a scenario. In the code below, we have a simple student object that has properties **name, age** and has a nested object of **scores** in three subjects(Maths, Elementary Science, English). Imagine we need to display some information based on this data and for that purpose we declare a displlaySymmary function that accepts one input parameter that should be a student object. 
 
 ```javascript
-const student = {
+let student = {
     name: 'John Doe',
     age: 19,
     scores: {
@@ -196,7 +196,7 @@ let person = {
 };
 
 // Assign default value of 25 to age if undefined
-const { name, country, age = 25 } = person;
+let { name, country, age = 25 } = person;
 
 // Here I am using ES6 template literals
 console.log(`I am ${name} from ${country} and I am ${age} years old.`);
@@ -207,19 +207,19 @@ console.log(`I am ${name} from ${country} and I am ${age} years old.`);
 As for now we see how objects are destructed and why sometimes should we use object destructuring so that can make our code easier and clear. Except objects we can also destruct arrays and in the following lines and examples we can see how destcruct arrays is done.
 In array destructuring, you use an array literal on the left-hand-side of an assignment expression. Each variable name on the array literal maps to the corresponding item at the same index on the destructured array. Here is an example.
 ```javascript
-const rgb = [255, 200, 0];
+let rgb = [255, 200, 0];
 
 // Array Destructuring
-const [red, green, blue] = rgb;
+let [red, green, blue] = rgb;
 
 console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 255, G: 200, B: 0
 ```
  Also destructuring can be used to a nested arrays:
  ```javascript
-const color = ['#FF00FF', [255, 0, 255], 'rgb(255, 0, 255)'];
+let color = ['#FF00FF', [255, 0, 255], 'rgb(255, 0, 255)'];
 
 // Use nested destructuring to assign red, green and blue
-const [hex, [red, green, blue]] = color;
+let [hex, [red, green, blue]] = color;
 
 console.log(hex, red, green, blue); // #FF00FF 255 0 255
 ```
