@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Archive</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/styles/app.css">
+</head>
+<body>
+  <div class="container-fluid" id="app">
+    <img src="src/img/logo.png" alt="star-wars-logo" class="center medium">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <img src="src/img/cosmonaut.svg" alt="person" class="imgBtn center small" id="peopleBtn">
+      </div>
+      <div class="col-md-4">
+        <img src="src/img/rocket.svg" alt="ship" class="imgBtn center small" id="shipsBtn">
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-1">
+        <button class="btn btn-warning invisible center" id="prevBtn"><<<</button>
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn btn-warning invisible center" id="nextBtn">>>></button>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
+
+    <img src="src/img/loader.gif" alt="loader" class="invisible center" id="loader">
+
+    <div class="container" id="result"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="src/scripts/app.js"></script>
+</body>
+</html>
