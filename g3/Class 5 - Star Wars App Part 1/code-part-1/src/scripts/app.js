@@ -1,8 +1,6 @@
 const state = {
   pageType: null,
-  currentPage: null,
-  hasPrevPage: null,
-  hasNextPage: null
+  currentPage: null
 }
 
 const navService = {
@@ -14,27 +12,36 @@ const navService = {
   registerListeners: function() {
     this.peopleBtn.addEventListener("click", e => {
       state.currentPage = 1;
+      state.pageType = "people"
       starWarsService.getPeople(state.currentPage)
     });
     this.shipsBtn.addEventListener("click", e => {
       state.currentPage = 1;
+      state.pageType = "ships"
       starWarsService.getShips(state.currentPage)
     });
     this.prevBtn.addEventListener("click", this.prevPage);
     this.nextBtn.addEventListener("click", this.nextPage);
   },
   nextPage: function(e) {
-    if(state.pageType === "people" && state.hasNextPage) {
-      state.currentPage++
-      starWarsService.getPeople(state.currentPage)
+    if(state.pageType === "people") {
+      state.currentPage++;
+      starWarsService.getPeople(state.currentPage);
     }
-    else if(state.pageType === "ships" && state.hasNextPage) {
-      state.currentPage++
-      starWarsService.getShips(state.currentPage)
+    else if(state.pageType === "ships") {
+      state.currentPage++;
+      starWarsService.getShips(state.currentPage);
     }
   },
   prevPage: function(e) {
-
+    if(state.pageType === "people") {
+      state.currentPage--;
+      starWarsService.getPeople(state.currentPage);
+    }
+    else if(state.pageType === "ships") {
+      state.currentPage--;
+      starWarsService.getShips(state.currentPage);
+    }
   }
 }
 
@@ -45,9 +52,8 @@ const starWarsService = {
     fetch(peopleUrl)
       .then(res => res.json())
       .then(data => {
-        if(data.next)
-          state.hasNextPage = true;
-        uiService.renderPeople(data.results)
+        this.checkPrevNext(data.previous, data.next);
+        uiService.renderPeople(data.results);
       })
       .catch(err => console.log(err));
   },
@@ -56,15 +62,27 @@ const starWarsService = {
     fetch(shipsUrl)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        uiService.renderShips(data.results)
+        this.checkPrevNext(data.previous, data.next);
+        uiService.renderShips(data.results);
       })
       .catch(err => console.log(err))
+  },
+  checkPrevNext: function(prev, next) {
+    if(prev)
+      uiService.showNode(navService.prevBtn);
+    else
+      uiService.hideNode(navService.prevBtn);
+
+    if(next)
+      uiService.showNode(navService.nextBtn);
+    else
+      uiService.hideNode(navService.nextBtn);
   }
 }
 
 const uiService = {
   resultNode: document.getElementById("result"),
+  loader: document.getElementById("loader"),
   renderPeople: function(people) {
     this.resultNode.innerHTML = `
       <div class="row yellow">
@@ -107,11 +125,19 @@ const uiService = {
         <div class="col-md-2">${ship.model}</div>
         <div class="col-md-2">${ship.manufacturer}</div>
         <div class="col-md-2">${ship.cost_in_credits}</div>
-        <div class="col-md-2">${ship.crew + ships.passengers}</div>
+        <div class="col-md-2">${ship.crew + ship.passengers}</div>
         <div class="col-md-1">${ship.starship_class}</div>
       </div>
       `
     }
+  },
+  showNode: function(node) {
+    node.classList.remove("invisible");
+    node.classList.add("visible");
+  },
+  hideNode: function(node) {
+    node.classList.remove("visible");
+    node.classList.add("invisible");
   }
 }
 

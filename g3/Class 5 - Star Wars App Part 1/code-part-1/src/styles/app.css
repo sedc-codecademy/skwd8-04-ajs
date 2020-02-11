@@ -4,6 +4,11 @@ body {
   -ms-overflow-style: none; /* This line disables scrollbar, but keeps functionality works only on IE and Edge */
 }
 
+.padding {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
 .yellow {
   color: yellow;
   text-align: center;
@@ -41,10 +46,6 @@ body {
 
 #loader {
   height: 10vh;
-}
-
-#result {
-  margin-bottom: 5vh;
 }
 
 ::-webkit-scrollbar { /* This selector disables scrollbar, but keeps functionality works on Chrome, Safari, Opera */
