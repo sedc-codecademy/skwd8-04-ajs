@@ -51,3 +51,6 @@ In this phase we start coding all the tasks that we have planned and written in 
 
 ### Testing phase 🔹
 This is a phase where we spend time testing our code and checking if the built product correlates with the requirements. When we encounter a problem, missing requirement or something out of place we go back to the coding phase to fix the problems and then go back to testing. This cycle is done when we are satisfied with the complete product. 
+
+## Deadline 🚩
+End of the Advanced.JS
