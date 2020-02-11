@@ -82,7 +82,6 @@ const starWarsService = {
 
 const uiService = {
   resultNode: document.getElementById("result"),
-  loader: document.getElementById("loader"),
   renderPeople: function(people) {
     this.resultNode.innerHTML = `
       <div class="row yellow">
