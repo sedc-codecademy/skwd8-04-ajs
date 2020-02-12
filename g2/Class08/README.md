@@ -84,7 +84,7 @@ function  getDocuments(){
         $.ajax({
             url:"https://raw.githubusercontent.com/sedc-codecademy/sedc7-04-ajs/master/g2/Class7/documents.json",
             success: (response)=> {
-                resolve(JSON.parse(response));
+                resolve(response);
             },
             error: (error)=> {
                 reject(error);
