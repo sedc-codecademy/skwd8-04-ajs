@@ -1,3 +1,5 @@
+// *** Constructor Notation Templates ***
+
 // function Dog(name, color, age, favoriteFood) {
 //     this.name = name === undefined ? "unnamed" : name; // in case there is no name
 //     this.color = color;
@@ -17,6 +19,8 @@
 // let sparky = new Dog("Sparky", "Brown", 1, ["Chicken", "Cucumber"]);
 // let doggy = new Dog();
 
+// *** this keyword ***
+
 // function thisTemplate(description) {
 //     // console.log(this);
 //     this.description = description;
@@ -31,12 +35,15 @@
 // console.log(whatsThisTemplate.whatsThis);
 // whatsThisTemplate.whatsThisFunc();
 
-
+// // this sent from the HTML
 // function show(sender) {
 //     console.log(sender);
 // }
 
 
+
+
+// *** Destructuring ***
 
 // let dog = {
 //     dogName: "Bucky",
@@ -55,18 +62,18 @@
 // // console.log({ dogName, dogColor, dogAge });
 
 
-const student = {
-    name: 'John Doe',
-    age: 19,
-    scores: {
-        JavaScript: {
-            isActive: false,
-            points: 94
-        },
-        AdvancedJS: 73,
-        CSharp: 65
-    }
-};
+// const student = {
+//     name: 'John Doe',
+//     age: 19,
+//     scores: {
+//         JavaScript: {
+//             isActive: false,
+//             points: 94
+//         },
+//         AdvancedJS: 73,
+//         CSharp: 65
+//     }
+// };
 
 // const { scores: { JavaScript: { points }, AdvancedJS, CSharp } } = student;
 // // console.log(JavaScript); // does not exist (because it is destructured)
@@ -74,6 +81,7 @@ const student = {
 // console.log(AdvancedJS);
 // console.log(CSharp);
 
+// *** Array destructuring ***
 
 // const colors = ['#FF00FF', [255, 0, 255], 'rgb(255, 0, 255)'];
 
@@ -84,10 +92,13 @@ const student = {
 // console.log(green);
 
 // colors[1][1] = 15;
-// after destructuring **
+// // after destructuring we don't have a reference anymore so we don't see
+// // the changed value on the destructured variable
 // console.log(green);
 
 
+
+// *** Spread Operator ***
 
 // const numbers = [2, 3, 5];
 
@@ -104,7 +115,7 @@ const student = {
 // const [oneDimensionArr] = newArray;
 // console.log(...oneDimensionArr);
 
-//extra
+// *** Extra ***
 // const newStudent = {
 //     ...student
 // }
@@ -114,27 +125,26 @@ const student = {
 
 
 
-const dog = {
-    isHappy: true,
-    bark: function() {
-        console.log("BARK BARK BARK!");
-    }
-}
+// const dog = {
+//     isHappy: true,
+//     bark: function() {
+//         console.log("BARK BARK BARK!");
+//     }
+// }
 
-// const referenceBarnie = dog;
-const barnie = Object.create(dog);
+// const barnie = Object.create(dog);
 
 
-const addressInfo = {
-    street: "Dogge Street",
-    streetNumber: 24,
-    contactPerson: "071234567"
-}
-const addressInfo2 = {
-    street: "New Street",
-    contactPerson: "+38971234567",
-    test: ""
-}
+// const addressInfo = {
+//     street: "Dogge Street",
+//     streetNumber: 24,
+//     contactPerson: "071234567"
+// }
+// const addressInfo2 = {
+//     street: "New Street",
+//     contactPerson: "+38971234567",
+//     neighborhood: "maalski"
+// }
 
 // let barnieChip = Object.assign(addressInfo, dog);
 
@@ -151,14 +161,13 @@ const addressInfo2 = {
 // const newDog = {};
 // const nameProperty = "dogName";
 // newDog[nameProperty] = "Sharko";
-// newDog.dogName = 
 
 // console.log(newDog);
-const academy = {};
-const subjects = ["javaScript", "html", "css", "C#"];
+// const academy = {};
+// const subjects = ["javaScript", "html", "css", "C#"];
 
-for (const subject of subjects) {
-    academy[subject] = subject;
-}
+// for (const subject of subjects) {
+//     academy[subject] = subject;
+// }
 
-console.log(academy);
+// console.log(academy);
