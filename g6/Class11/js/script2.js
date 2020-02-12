@@ -12,6 +12,8 @@ function Vehicle(id, name, bathcNo, price) {
     }
 }
 
+Vehicle.prototype.stop = () => console.log('I am stopping');
+
 function WheeledVehicle(id, name, batch, price,  wheels) {
 
     //this sets current object to inherit from Vehicle
@@ -29,3 +31,4 @@ console.log(Object.getPrototypeOf(wheeledVehicle));
 
 let vehicle = new wheeledVehicle.constructor(7, 'Yugo', 80, 100);
 console.log(vehicle);
+vehicle.stop();
