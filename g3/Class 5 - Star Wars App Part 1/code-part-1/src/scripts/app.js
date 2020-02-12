@@ -83,7 +83,10 @@ const starWarsService = {
 // this object contains all functionalty that has to do with HTML and Rendering
 const uiService = {
   resultNode: document.getElementById("result"), // this is the last <div> in the HTML with id "result", this div is used to render the tables
+  // peopleResult: document.getElementById("peopleResult"), // comment line 85 if you use this, and change the JavaScript code appropriately
+  // shipsResult: document.getElementById("shipsResult"), // comment line 85 if you use this, and change the JavaScript code appropriately
   renderPeople: function(people) { // In the parameter "people" actually "data.results" is passed from swapi response json, also this method is called in starWarsService, when we finally have successful response(people) from swapi
+    // Check the index.html file line 54, if you use peopleResult(line 44) remove this statemnet
     this.resultNode.innerHTML = `
       <div class="row yellow">
         <div class="col-md-3">Name</div>
@@ -95,6 +98,7 @@ const uiService = {
       </div>
     `;
     for (const person of people) {
+      // if you use peopleResult(line 44) then use this.peopleResult instead of this.resultNode
       this.resultNode.innerHTML += `
       <div class="row white">
         <div class="col-md-3">${person.name}</div>
@@ -108,6 +112,7 @@ const uiService = {
     }
   },
   renderShips: function(ships) { // In the parameter "ships" actually "data.results" is passed from swapi response json, also this method is called in starWarsService, when we finally have successful response(ships) from swapi
+    // Check the index.html file line 54, if you use shipsResult(line 54) remove this statemnet
     this.resultNode.innerHTML = `
       <div class="row yellow">
         <div class="col-md-3">Name</div>
@@ -119,6 +124,7 @@ const uiService = {
       </div>
     `;
     for (const ship of ships) {
+      // if you use shipsResult(line 54) then use this.shipsResult instead of this.resultNode
       this.resultNode.innerHTML += `
       <div class="row white">
         <div class="col-md-3">${ship.name}</div>
@@ -153,3 +159,16 @@ const uiService = {
 }
 
 document.addEventListener("DOMContentLoaded", e => navService.registerListeners()); // All Event Listeners are set after the DOM/HTML is loaded in the Browser, this is equivalent to $(document).ready() in JQuery
+
+
+// // CHECK THE the HTML FILE AT LINE 42 AND 53 IF YOU DON'T WANT TO USE THIS WORKAROUND
+// // Example for adding EventListeners to dynamicly created elements
+// let exampleElement = document.getElementById("exampleElement") // Selecting some element in the DOM
+// let exampleBtn = document.createElement("button") // Dynamically creating a button
+// exampleElement.append(exampleBtn) // Appending the dynamically created button in the DOM(exampleElement)
+
+// document.body.addEventListener('click', e => { // Use this workaround to "bind" an event on a dynamically created element
+//   if(e.target === exampleBtn){ // e.target is the HTMLElement that the user clicks, so we simply check if the clicked element is acually the exampleBtn that we dynamically created earlier...
+//     console.log("example button clicked!")
+//   }
+// });
