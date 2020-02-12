@@ -434,3 +434,4 @@ console.log(Object.isFrozen(dog)); // false
 * [Object methods](https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript)
 * [How to use spread syntax](https://codeburst.io/javascript-es6-the-spread-syntax-f5c35525f754)
 * [How To Use Object Destructuring in Modern Javascript](https://itnext.io/how-to-use-object-destructuring-in-modern-javascript-59758ebfb778)
+* [For...in Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
