@@ -39,21 +39,21 @@
 // Constructor Notation Templates
 
 function Dog(name, color, age, favoriteFood) {
-  this.name = name;
-  this.color = color;
-  this.age = age;
-  this.hasOwner = false;
-  this.favoriteFood = favoriteFood;
+    this.name = name;
+    this.color = color;
+    this.age = age;
+    this.hasOwner = false;
+    this.favoriteFood = favoriteFood;
 
-  this.bark = function() {
-    console.log('AV AV AV');
-  };
+    this.bark = function() {
+        console.log('AV AV AV');
+    };
 
-  this.eat = function(food) {
-    this.favoriteFood.forEach(ff =>
-      ff.toLowerCase() === food.toLowerCase() ? console.log(`My favourite food is ${food}`) : ''
-    );
-  };
+    this.eat = function(food) {
+        this.favoriteFood.forEach(ff =>
+            ff.toLowerCase() === food.toLowerCase() ? console.log(`My favourite food is ${food}`) : ''
+        );
+    };
 }
 
 let archi = new Dog('Archi', 'white', 5, ['meat', 'fruit']);
@@ -133,10 +133,10 @@ let archi = new Dog('Archi', 'white', 5, ['meat', 'fruit']);
 // displaySummary(student);
 
 function displaySummary({ name, scores: { JavaScript = 0, AdvancedJS = 0, CSharp = 0 } }) {
-  console.log('Hello ' + name);
-  console.log('Your JavaScript score is ' + JavaScript);
-  console.log('Your AdvancedJS score is ' + AdvancedJS);
-  console.log('Your CSharp score is ' + CSharp);
+    console.log('Hello ' + name);
+    console.log('Your JavaScript score is ' + JavaScript);
+    console.log('Your AdvancedJS score is ' + AdvancedJS);
+    console.log('Your CSharp score is ' + CSharp);
 }
 // displaySummary(student);
 
@@ -191,15 +191,15 @@ numbers = [1, ...numbers, 6];
 // console.log(numbers);
 
 function sumNumbers(num1, num2, num3) {
-  return num1 + num2 + num3;
+    return num1 + num2 + num3;
 }
 
 const student = {
-  name: 'John Doe',
-  age: 19
+    name: 'John Doe',
+    age: 19
 };
 
-let student2 = { ...student };
+let student2 = {...student };
 let student3 = student;
 
 student2.grade = 2;
@@ -210,8 +210,8 @@ student3.grade = 3;
 // console.log(student3);
 
 let student4 = {
-  ...student,
-  grade: 5
+    ...student,
+    grade: 5
 };
 
 // console.log(student4);
@@ -222,10 +222,10 @@ let student4 = {
 // Object methods
 
 let dog = {
-  isHappy: true,
-  bark: function() {
-    console.log('AV AV AV');
-  }
+    isHappy: true,
+    bark: function() {
+        console.log('AV AV AV');
+    }
 };
 
 // let barnie = {...dog}
@@ -235,13 +235,13 @@ barnie.name = 'Barnie';
 // console.log(barnie);
 
 let addressInfo = {
-  street: 'Partizanska',
-  streetNumber: 12,
-  contactPerson: 38970223305
+    street: 'Partizanska',
+    streetNumber: 12,
+    contactPerson: 38970223305
 };
 
 // let barnieChip = Object.assign(barnie, addressInfo);
-let barnieChip = { ...barnie, ...addressInfo };
+let barnieChip = {...barnie, ...addressInfo };
 // console.log(barnieChip);
 
 let barnieKeys = Object.keys(barnieChip);
@@ -252,3 +252,27 @@ console.log(barnieValues);
 
 let barnieEntries = Object.entries(barnieChip);
 console.log(barnieEntries);
+
+//dynamic creation of properties and methods
+let newDog = {};
+let nameProperty = "dogName";
+barnie[nameProperty] = "Murdzo";
+console.log(barnie);
+
+//Manipulating the reading and writing accessibility of entities
+//freeze
+//Object.freeze(barnie);
+//barnie.friend = "Alek";
+//console.log(barnie);
+barnie.dogName = "Dejan";
+//console.log(barnie);
+
+//seal
+Object.seal(barnie);
+barnie.dogName = "Sharko";
+console.log(barnie);
+barnie.friend = "Alek";
+
+//check if sealed/frozen
+console.log(Object.isSealed(barnie));
+console.log(Object.isFrozen(barnie));
