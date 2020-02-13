@@ -124,10 +124,10 @@ console.log(dog.dogColor); //Black
 console.log(dog.dogAge); //4
 
 //If we use destructuring on our object it will look like:
-const {name, color, age} = dog;
-console.log(name); //Bugsy
-console.log(color); //Black
-console.log(age); //4
+const {dogName, dogColor, dogAge} = dog;
+console.log(dogName); //Bugsy
+console.log(dogColor); //Black
+console.log(dogAge); //4
 ```
 So what is done in the previous example is that we declare an object and give to it three variables name, color and age, but we initialize it to our existing dog object, and since the **dog** object contains only three properties they will stored in **name, color and age** respectively.
 

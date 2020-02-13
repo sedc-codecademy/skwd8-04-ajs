@@ -1,6 +1,7 @@
 # Exercises
 ## Exercise 1
-Create 3 object templates. Academy, Student and Subject. The structure should be:
+Create 3 object templates. Academy, Student and Subject. The structure should be:  
+
 Academy
 * Name - string
 * Students - array of Students
