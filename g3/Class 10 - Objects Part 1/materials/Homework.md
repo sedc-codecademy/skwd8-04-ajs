@@ -1,5 +1,5 @@
-# Exercises
-## Exercise 1
+# Homework
+## Homework 1
 Create 3 object templates. Academy, Student and Subject. The structure should be:  
 
 Academy
@@ -30,7 +30,23 @@ Student
 * StartAcademy - accepts Academy object that it sets to the Academy property of the student
 * StartSubject - accepts Subject object and adds it to the CurrentSubject property but only if the student has an Academy object in the Academy property and that subject exists in the academy. If not, give error in console and do not set the CurrentSubject property
 
-## Exercise 2
+## Homework 2
 Make the functions StartAcademy and StartSubject dynamic.
 * StartAcademy - When the student calls StartAcademy, the student should also be added to the Academy property Students ( The academy that he is starting )
 * StartSubject - When the student calls StartSubject the student should also be added to the Subject property Students ( The subject that he is starting ). If there was another subject in the CurrentSubject property, that subject should be transferred to CompletedSubjects and then add the new Subject
+
+## Bonus
+Max of all & Min of first three
+* Create a function that takes unlimited parameters(numbers)
+* Find the minimum of the first three parameters
+* Find the max of all parameters
+* Return an object with this structure 
+```js
+{
+  stats: {
+    minOfThree: "<put the minimum here>",
+    maxOfAll: "<put the maximum here>"
+  }
+}
+```
+* Using destructuring print *minOfThree* and *maxOfAll* in console from the returned object (the destructered variables/consts should be named **min** and **max**)

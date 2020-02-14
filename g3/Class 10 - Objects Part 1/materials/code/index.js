@@ -1,4 +1,4 @@
-// The secretes of "this"
+// The secrets of "this"
 function Animal(name, age, breed) {
   this.name = name;
   this.age = age;
@@ -16,23 +16,28 @@ function calculateTwoPlusTwo() {
 //new calculateTwoPlusTwo() // We can also create an object from any function, but it doesn't have a point
 
 let cat = {
-  thisCat: this,
+  thisCat: this, // globalThis
   getThisCat: function() {
-    console.log(this);
+    console.log(this); // cat
   },
   dog: {
-    thisDog: this,
+    thisDog: this, // globalThis
     getThisDog: function() {
-      console.log(this);
+      console.log(this); // dog
     },
     getThisDogWithArrowFunc: () => {
-      console.log(this);
+      console.log(this); // globalThis
       const bird = {
         fly: function() {
-          console.log(this);
+          console.log(this); // bird
+          let thisBird = this; // bird
           const fish = {
-            swim: () => {
-              console.log(this);
+            swim: function() {
+              console.log(this); // fish
+              console.log(thisBird); // accessing bird in fish object
+            },
+            swimWithArrowFunc: () => {
+              console.log(this); // bird
             }
           }
           return fish;
