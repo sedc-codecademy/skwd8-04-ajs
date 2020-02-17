@@ -82,6 +82,8 @@ class Car extends WheeledVehicle {
 		}
 	}
 }
+let tesla = new Car(0002, "Tesla", "t202003", 30500, 5, false);
+Car.addAc(tesla); // The car has AC now and it costs 30900
 ```
 #### Check if an object is an instance of a class
 ```javascript
