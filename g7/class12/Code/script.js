@@ -7,7 +7,6 @@ let statistics = {
 
 // class, capital letter is a convention
 class Vehicle {
-    // Try put counter in class
     // The function that is called the first time a new object is created
     constructor(id, name, batch, price){
         // this.id = new object property
@@ -62,6 +61,15 @@ class Car extends WheeledVehicle{
     buyCar(money) {
         money >= this.price ? console.log(`Congrats! You bought a ${this.name}`) : console.log(`You need ${this.price - money} more to buy this car!`);
     }
+    static addAc(car){
+        if(!car.airConditioning){
+            car.airConditioning = true;
+            car.price += 400;
+            console.log(`The car ${car.name} has AC now!`);
+        } else {
+            console.log("The car already has an AC!");
+        }
+    }
 }
 
 let tesla = new Car(144, "Tesla", "T21431", 40000, 5, false);
@@ -69,3 +77,17 @@ console.log(tesla);
 tesla.printVehicle();
 tesla.driveVehicle();
 tesla.buyCar(34000); 
+Car.addAc(tesla);
+console.log(tesla);
+class Dog {
+    constructor(name){
+        this.name = name;
+    }
+}
+// instanceof checks if an object inherits at some point from some class
+console.log(tesla instanceof Car);
+console.log(tesla instanceof WheeledVehicle);
+console.log(tesla instanceof Vehicle);
+console.log(tesla instanceof Dog);
+console.log(trotinet instanceof Car);
+console.log(trotinet instanceof WheeledVehicle);
