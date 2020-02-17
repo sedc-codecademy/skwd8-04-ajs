@@ -82,7 +82,7 @@ class Car extends WheeledVehicle {
 		}
 	}
 }
-
+```
 #### Check if an object is an instance of a class
 ```javascript
 console.log(myElectricCar instanceof ElectricCar);
