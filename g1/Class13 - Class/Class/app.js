@@ -59,7 +59,7 @@ class Car extends WheeledVehicle {
   }
 }
 
-let car = new Car(3, 'Car', 'GHJ', 5000, 5, false);
+// let car = new Car(3, 'Car', 'GHJ', 5000, 5, false);
 // console.log(car);
 // car.buyCar(5000); // not static
 // Car.addAc(car); // static
@@ -88,9 +88,9 @@ class ElectricCar extends Car {
 // console.log(tesla2);
 // console.log(tesla.owner);
 
-console.log(car instanceof Car);
-console.log(car instanceof Vehicle);
-console.log(boat instanceof ElectricCar);
+// console.log(car instanceof Car);
+// console.log(car instanceof Vehicle);
+// console.log(boat instanceof ElectricCar);
 
 class Animal {
   constructor(name, type, age, size) {
@@ -113,13 +113,32 @@ class Animal {
     }
   }
 
-  eat(animal) {}
+  eat(animal) {
+    if (animal instanceof Animal) {
+      if (this.type === 'herbivore') {
+        console.log(`The animal ${this.name} is a herbivore and does not eat other animals`);
+      } else {
+        if (this.size < animal.size * 2) {
+          console.log(
+            `The animal ${this.name} tried to eat the ${animal.name} but it was too large.`
+          );
+        } else {
+          this.isEaten = true;
+          console.log(`The animal ${this.name} ate the ${animal.name}`);
+        }
+      }
+    } else {
+      console.log(`The animal ${this.name} is eating ${animal.name}`);
+    }
+
+    // If the animal is twice as large or larger than this animal than just log in the console: The animal (this animal name) tried to eat the (the input animal name) but it was too large.
+  }
 }
 
 let dog = new Animal('Blacky', 'omnivore', 10, 40);
 let panda = new Animal('Panda', 'herbivore', 4, 300);
 let lion = new Animal('Lion', 'carnivore', 20, 150);
-let car = new Animal('Renault', 'car', 2, 1900); // THIS SHOULD FAIL!
+// let car = new Animal('Renault', 'car', 2, 1900); // THIS SHOULD FAIL!
 
 dog.eat(panda);
 dog.eat(lion);
