@@ -88,3 +88,44 @@ console.log("Object.values()----", barnieValues);
 const barnieEntries = Object.entries(barnie);
 console.log("Object.entries()-----", barnieEntries);
 // array of smaller arrays with two elements, one is the property and the other is the value
+
+// -------------- Dynamically creating properties ---------------
+const newDog = {};
+const nameProperty = "dogName";
+newDog[nameProperty] = "Sparky";
+newDog["owner"] = "Krisitna";
+console.log(newDog);
+
+// -------------- Object.freeze() & Object.seal() ----------------
+
+Object.freeze(barnie);
+barnie.friend = "Bob";
+barnie.name = "Majlo";
+console.log(barnie);
+// Object.freeze completely locks the object.
+// We cannot add new properties or change the existing ones.
+
+const myPuppy = Object.create(newDog);
+myPuppy.breed = "Hysky";
+Object.seal(myPuppy);
+myPuppy.friend = "Sparky";
+myPuppy.breed = "Retriever";
+console.log(myPuppy);
+// Object.seal() allows us to change values of existing properties, but we cannot add others
+
+// --------------- Spread operator -------------------
+// it spreads the array into separate items
+const numbers = [1, 2, 3]; // 1, 2, 3
+
+function sum(num1, num2, num3){
+  return num1 + num2 + num3;
+}
+
+console.log(sum(5, 7, 1));
+
+console.log(sum(numbers[0], numbers[1], numbers[2])); // this is ugly :)
+console.log(sum(...numbers));
+
+const newNumbers = [...numbers];
+
+
