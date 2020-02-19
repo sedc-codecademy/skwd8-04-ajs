@@ -22,6 +22,10 @@ The web page should be:
     * Text about the app
     * Text about creator
     * Contact info
+* Extra requirements
+  * Add sort buttons abov the temperature, humidity and wind speed ( ascending and descending )
+  * Create a message box that will show when we successfully get a response weather data and error when we don't get data from the API
+  * When a request is made, there should be a loader animation while the user is waiting for the request
 ## Flow 🌈
 1. Person opens the web app
 2. Right away a welcome title and text is shown
