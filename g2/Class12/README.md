@@ -125,3 +125,4 @@ console.log(myElectricCar instanceof Vehicle);
 * [From prototypes to Classes](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 * [JavaScript classes under the hood](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
 * [JavaScript: How It's Made](https://www.youtube.com/watch?v=FSs_JYwnAdI&feature=youtu.be&fbclid=IwAR1U8lvKAiiJQUDwzLj3OqKKbogk3Z59VlWcLxeCZfoTjyz2_SCTd5ji7OQ)
+* [Do more with less js, tips for refactoring](https://itnext.io/do-more-with-less-javascript-clean-simple-shorthand-d10b245f1338)
