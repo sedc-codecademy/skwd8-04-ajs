@@ -1,0 +1,32 @@
+body
+{
+    font-family: Verdana;
+    font-size: 14px;
+    line-height: 18px;
+}
+.userForm
+{
+    display: block;
+    padding: 5px;
+    margin: 0 0 5px;
+}
+
+.usersList
+{
+    display: block;
+}
+
+.usersList > ul
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.usersList > ul > li
+{
+    padding: 5px;
+    background: #AFAFAF;
+    color: white;
+    margin: 2px 0;
+}
