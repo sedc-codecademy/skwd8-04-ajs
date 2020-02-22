@@ -19,6 +19,6 @@ Example usage: http://numbersapi.com/4..24
 * A method that takes numbers and print them in the table one by one, but waits random seconds between 1-3 before it prints the next number (async for)
 * A method that waits random seconds and does nothing (should be used in the previous method)
 
-### Data Service
+### Data Service (Bonus)
 *Data service offer us service for working with some kind of data*
-* Take array and add suffix
+* Take array and add suffix 
