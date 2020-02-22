@@ -92,7 +92,7 @@ const navService = {
 // The second service of 4
 // This service is used to get data from swapi
 const starWarsService = {
-  url: "https://swapi.co/ap", // base URL
+  url: "https://swapi.co/api", // base URL
   getPeople: function(page, sortProperty) { // In "page" we typcally send currentPage from the state
     const peopleUrl = `${this.url}/people/?page=${page}`; // URL construction
     uiService.showNode(uiService.loaderNode); // Before we send the request to swapi we are showing the loader onto the HTML
@@ -106,11 +106,10 @@ const starWarsService = {
         uiService.renderPeople(sortedData); // After everythings is checked, we call renderPeople to generete table/list in the HTML from the data we got from swapi
       })
       .catch(err => this.handleError(err))
-      .catch()
       .finally(() => uiService.hideNode(uiService.loaderNode)); // Finally is a better option, because it will be executed even if the promise is rejected
   },
   getShips: function(page, sortProperty) {
-    const shipsUrl = `${this.url}/starships/?page=${page}`; // URL construction
+    const shipsUrl = `${this.url}/starships/?page=${page}`; // URL construction, if you want to throw an error on purpose(for example: to test the error handling), just mess-up the URL
     uiService.showNode(uiService.loaderNode);
     fetch(shipsUrl)
       .then(res => res.json())
@@ -123,9 +122,9 @@ const starWarsService = {
       .catch(err => this.handleError(err))
       .finally(() => uiService.hideNode(uiService.loaderNode));
   },
-  handleError: function(errorMsg) {
-    $("#errorModalBody").text(errorMsg)
-    $("#errorModal").modal('show')
+  handleError: function(errorMsg) { // Check the comment in line 113 in this script to test error handling, or you can just turn off the WI-FI on you laptop to test it
+    $("#errorModalBody").text(errorMsg) // Sets the text in the popup to the error message, see the HTML
+    $("#errorModal").modal('show') // .modal() is bootstrap built-in method that opens a modal
   }
 }
 
