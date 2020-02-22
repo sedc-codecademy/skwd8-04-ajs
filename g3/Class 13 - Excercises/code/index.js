@@ -72,14 +72,32 @@ class AsyncService {
 //   }
 // }
 
+document.addEventListener("DOMContentLoaded", async e => { // the event handler also needs to be async because inside we use await...
+  // let mySyncService = new AsyncService() // We don't need to create an object from the classes since we are using static methods and properties
+  let data = await AsyncService.getData(10, 20); 
+  AsyncService.printOneByOne(data); // Even though printOneByOne is an async function(which means that it returns a promise), we don't need it's result that means we are not using await or .then()
+});
+
 // let result = (async function() {
 //   let mySyncService = new AsyncService()
   
 //   console.log(await mySyncService.getData(40, 45))
 //   // mySyncService.getData(40, 45).then(data => console.log(data))
 // })()
-document.addEventListener("DOMContentLoaded", async e => { // the event handler also needs to be async because inside we use await...
-  // let mySyncService = new AsyncService() // We don't need to create an object from the classes since we are using static methods and properties
-  let data = await AsyncService.getData(10, 20); 
-  AsyncService.printOneByOne(data); // Even though printOneByOne is an async function(which means that it returns a promise), we don't need it's result that means we are not using await or .then()
-});
+
+// function print(printFunc) {
+//   const data = {
+//     "1": "1 is the number of Gods in monotheism.",
+//     "2": "2 is the number of stars in a binary star system (a stellar system consisting of two stars orbiting around their center of mass).",
+//     "3": "3 is cans of Spam consumed every second in the United States."
+//    }
+
+//    for (const key in data) {
+//     const element = data[key]
+//     printFunc(element)
+//    }
+// }
+
+// print(console.log)
+// print(alert)
+// print(document.write)
