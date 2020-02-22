@@ -5,17 +5,41 @@ class NumFact {
   }
 }
 
-// class UiService {
-//   constructor() {
+class UiService {
+  static table = null;
+  static tableHead = null;
+  static tableBody = null;
 
-//   }
-//   createTable(...columns) {
+  static createTable(...columns) {
+    this.table = document.createElement("table")
+    this.tableHead = document.createElement("thead")
+    let trHead = document.createElement("tr")
+    this.tableHead.append(trHead)
+    this.tableBody = document.createElement("tbody")
+    this.table.append(this.tableHead)
+    this.table.append(this.tableBody)
 
-//   }
-//   addItemToTable(item) {
+    for (const column of columns) {
+      let th = document.createElement("th")
+      th.textContent = column
+      trHead.append(th)
+    }
 
-//   }
-// }
+    let root = document.getElementById("root")
+    root.append(this.table)
+  }
+  static addItemToTable(item) {
+    let tr = document.createElement("tr")
+    
+    for (const key in item) {
+      let td = document.createElement("td")
+      td.textContent = item[key];
+      tr.append(td)
+    }
+
+    this.tableBody.append(tr)
+  }
+}
 
 class AsyncService {
   static async getData(from, to) {
@@ -23,10 +47,12 @@ class AsyncService {
     let data = await res.json();
     return data;
   }
-  static async printOneByOne(numbers, renderCallback) {
+  static async printOneByOne(numbers) {
+    UiService.createTable(...Object.keys(new NumFact()))
+
     for (const key in numbers) {
-      await this.wait(1000)
-      renderCallback(new NumFact(key, numbers[key]))
+      await this.wait(50)
+      UiService.addItemToTable(new NumFact(key, numbers[key]))
     }
   }
   static wait(ms) {
@@ -50,6 +76,6 @@ class AsyncService {
 // })()
 document.addEventListener("DOMContentLoaded", async e => {
   // let mySyncService = new AsyncService()
-  let data = await AsyncService.getData(5, 10)
+  let data = await AsyncService.getData(10, 20)
   AsyncService.printOneByOne(data, console.log)
 })
