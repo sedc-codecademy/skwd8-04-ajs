@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+  color: white;
+  -ms-overflow-style: none; /* This line disables scrollbar, but keeps functionality works only on IE and Edge */
+}
+
+#errorModal {
+  color: grey;
+}
+
+.padding {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.yellow {
+  color: yellow;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.white {
+  color: white;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small {
+  height: 30vh;
+}
+
+.medium {
+  height: 40vh;
+}
+
+.imgBtn {
+  cursor: pointer;
+}
+
+#prevBtn, #nextBtn {
+  font-weight: bold;
+}
+
+#loader {
+  height: 10vh;
+}
+
+::-webkit-scrollbar { /* This selector disables scrollbar, but keeps functionality works on Chrome, Safari, Opera */
+  display: none;
+}

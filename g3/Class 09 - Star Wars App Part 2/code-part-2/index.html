@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Archive</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="src/styles/app.css">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container-fluid" id="app">
+    <img src="src/img/logo.png" alt="star-wars-logo" class="center medium padding">
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <img src="src/img/cosmonaut.svg" alt="person" class="imgBtn center small" id="peopleBtn">
+      </div>
+      <div class="col-md-4">
+        <img src="src/img/rocket.svg" alt="ship" class="imgBtn center small" id="shipsBtn">
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5"></div>
+      <div class="col-md-1">
+        <button class="btn btn-warning invisible center" id="prevBtn"><<<</button>
+      </div>
+
+      <div class="col-md-1">
+        <button class="btn btn-warning invisible center" id="nextBtn">>>></button>
+      </div>
+      <div class="col-md-5"></div>
+    </div>
+
+    <img src="src/img/loader.gif" alt="loader" class="invisible center" id="loader">
+
+    <!-- Use these 2 "peopleHeader" and "shipsHeader" instead of "result" div if you want to use the standard .getElementById() => .addEventListener() way -->
+    <!-- Also change the JavaScript code appropriately -->
+    <div class="container padding">
+      <div class="row yellow invisible" id="peopleHeader">
+        <div class="col-md-3" id="peopleName">Name</div>
+        <div class="col-md-2">Height</div>
+        <div class="col-md-2">Mass</div>
+        <div class="col-md-2">Gender</div>
+        <div class="col-md-2">Birth Year</div>
+        <div class="col-md-1">Films</div>
+      </div>
+  
+      <div class="row yellow invisible" id="shipsHeader">
+        <div class="col-md-3" id="shipsName">Name</div>
+        <div class="col-md-2">Model</div>
+        <div class="col-md-2">Manufacturer</div>
+        <div class="col-md-2">Cost</div>
+        <div class="col-md-2">Capacity</div>
+        <div class="col-md-1">Class</div>
+      </div>
+
+      <div id="result"></div>
+    </div>
+
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="errorModalLongTitle">SWAPI Error</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="errorModalBody">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="src/scripts/app.js"></script>
+</body>
+</html>
