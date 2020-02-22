@@ -11,6 +11,7 @@ class UiService {
   static tableBody = null;
 
   static createTable(...columns) {
+    // Find the bug with the th elements(columns)
     this.table = document.createElement("table")
     this.tableHead = document.createElement("thead")
     let trHead = document.createElement("tr")
@@ -48,7 +49,7 @@ class AsyncService {
     return data;
   }
   static async printOneByOne(numbers) {
-    UiService.createTable(...Object.keys(new NumFact()))
+    UiService.createTable(Object.keys(new NumFact()))
 
     for (const key in numbers) {
       await this.wait(50)
