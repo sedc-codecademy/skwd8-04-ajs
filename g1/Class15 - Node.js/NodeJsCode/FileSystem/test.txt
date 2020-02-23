@@ -1,0 +1,2 @@
+First line of text
+ This is new text in a new line
