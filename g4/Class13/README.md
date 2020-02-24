@@ -1,6 +1,6 @@
 # Objects pt3 &#x1F34E;
 ## Classes in JavaScript
-Inheritance with prototypes can be a hassle. JavaScript was not built with object oriented functionalities in mind from the beginning and it was pretty hard to work with prototypes. This is why in ES6 JavaScript finally got classes and object oriented features. From that point forward we can use classes instead of constructor functions and use inheritance and constructors very easy. We could also access the parent constructor pretty easy as well. This is a huge change for the language that made developers lives very easy. So classes are just like constructor classes but they are written in a different manner and have a few neat features. They can be created by just writing the keyword **class**. Note that these changes did not change how JavaScript works, the new classes still work with prototypes behind the scenes. It is just better structured and made easier and more convenient to use.
+Inheritance with prototypes can be a hassle. JavaScript was not built with object oriented functionalities in mind from the beginning and it was pretty hard to work with prototypes. This is why in ES6 JavaScript finally got classes and object oriented features. From that point forward we can use classes instead of constructor functions and use inheritance and constructors very easy. We could also access the parent constructor pretty easy as well. This is a huge change for the language that made developers lives very easy. So classes are just like constructor classes but they are written in a different manner and have a few neat features. They can be created by just writing the keyword **class**. Note that these changes did not change how JavaScript, the new classes still work with prototypes behind the scenes. It is just better structured and made easier and more convenient to use. 
 ```javascript
 class Vehicle {
     constructor(id, name, batch, price) {
@@ -30,7 +30,6 @@ class WheeledVehicle extends Vehicle {
 		console.log(`We are driving a ${this.name} on ${this.wheels} wheels!`);
     }
 }
-
 let bike = new WheeledVehicle(87, "Bike", "12g", 700, 2);
 console.log(bike);
 bike.printVehicle();
@@ -48,12 +47,10 @@ class Car extends WheeledVehicle {
         if(ac) this.price += 400;
     }
     buyCar(money) {
-      money >= this.price
-        ? console.log("Congrats! You bought a car")
-        : console.log(`You need ${this.price - money} more to buy this car!`);
+	    money >= this.price ? console.log("Congrats! You bought a car") : 
+		console.log(`You need ${this.price - money} more to buy this car!`);
     }
 }
-
 let car = new Car(99, "Car", "22k", 7800, 4, false);
 console.log(car);
 car.printVehicle();
@@ -62,7 +59,7 @@ car.buyCar(5000);
 console.log(Object.getPrototypeOf(car));
 ```
 ## Static methods
-When we write methods in a class, the methods are stored in the prototype. These functions can be called only if we create an object from the class. But if we want to create a method on the class it self, that can be called without creating an object, we can with the keyword **static**. The static methods are great for creating utility and service methods on the class it self.
+When we write methods in a class, the methods are stored in the prototype. These functions can be called only if we create an object from the class. But if we want to create a method on the class it self, that can be called without creating an object, we can with the keyword **static**. The static methods are great for creating utility and service methods on the class it self. 
 ```javascript
 class Car extends WheeledVehicle {
     constructor(id, name, batch, price, doors, ac) {
@@ -72,18 +69,17 @@ class Car extends WheeledVehicle {
         if(ac) this.price += 400;
     }
     buyCar(money) {
-      money >= this.price
-        ? console.log("Congrats! You bought a car")
-        : console.log(`You need ${this.price - money} more to buy this car!`);
+	    money >= this.price ? console.log("Congrats! You bought a car") : 
+		console.log(`You need ${this.price - money} more to buy this car!`);
     }
     static addAc(car){
-      if(!car.airConditioning){
-        car.airConditioning = true;
-        car.price += 400;
-        console.log(`The car has AC now and it costs ${car.price}`);
-      } else {
-        console.log(`The car already has AC!`);
-      }
+		if(!car.airConditioning){
+			car.airConditioning = true;
+			car.price += 400;
+			console.log(`The car has AC now and it costs ${car.price}`);
+		} else {
+			console.log(`The car already has AC!`);
+		}
 	}
 }
 ```
@@ -93,17 +89,15 @@ Getters and Setters are not a new concept in programming. When we create propert
 class ElectricCar extends Car {
     constructor(id, name, batch, price, doors, owner) {
         super(id, name, batch, price, doors, true);
-		    this.owner = owner;
+		this.owner = owner;
     }
     get owner() {
 		console.log("We are getting the name of the owner. Please wait...");
         return "The car is owned by:" + this._owner;
     }
-    set owner(ownerName){
-      console.log("We are setting the name of the owner. Please wait...")
-      ownerName.length > 1
-        ? this._owner = ownerName
-        : (()=> {throw new Error("Owner name too short!")})();
+	set owner(ownerName){
+		console.log("We are setting the name of the owner. Please wait...")
+		ownerName.length > 1 ? this._owner = ownerName : (()=> {throw new Error("Owner name too short!")})();
 	}
 }
 
@@ -124,5 +118,3 @@ console.log(myElectricCar instanceof Vehicle);
 * [Class syntax explained](https://javascript.info/class)
 * [From prototypes to Classes](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 * [JavaScript classes under the hood](https://medium.com/tech-tajawal/javascript-classes-under-the-hood-6b26d2667677)
-* [JavaScript: How It's Made](https://www.youtube.com/watch?v=FSs_JYwnAdI&feature=youtu.be&fbclid=IwAR1U8lvKAiiJQUDwzLj3OqKKbogk3Z59VlWcLxeCZfoTjyz2_SCTd5ji7OQ)
-* [Do more with less js, tips for refactoring](https://itnext.io/do-more-with-less-javascript-clean-simple-shorthand-d10b245f1338)
