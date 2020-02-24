@@ -19,13 +19,13 @@ Now that we have node.js we can execute JavaScript not only in the browser, but 
 5. You can now execute JavaScript in the console
 
 #### Useful commands while working in windows console
-**dir** - what is inside the current directory
-**cd** - traversing trough the folder structure
-**cd folderName** - enters a folder
-**cd ..** - goes back one folder ( to the parent )
-**cd ..\..** - goes back 2 times
-**cd folderName\anotherFolder** - goes inside one folder and then into another
-**cls** - clears the console
+* **dir** - what is inside the current directory
+* **cd** - traversing trough the folder structure
+* **cd folderName** - enters a folder
+* **cd ..** - goes back one folder ( to the parent )
+* **cd ..\..** - goes back 2 times
+* **cd folderName\anotherFolder** - goes inside one folder and then into another
+* **cls** - clears the console
 
 #### Executing scripts in console
 We can also create a script and run it in the console. Since we can run code in the console we can also run a script that will completely execute in the console. We do that by:
