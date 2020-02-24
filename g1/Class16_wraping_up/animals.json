@@ -1,0 +1,197 @@
+{
+   "animals": [
+      {
+         "name": "Spot",
+         "type": "dog",
+         "age": 5,
+         "legs": 4,
+         "tail": true,
+         "eyes": 2,
+         "children": [
+            {
+               "name": "Spot Junior",
+               "type": "dog",
+               "age": 2,
+               "legs": 4,
+               "eyes": 2,
+               "tail": true,
+               "children": []
+            },
+            {
+               "name": "Lucy",
+               "type": "dog",
+               "age": 2,
+               "legs": 4,
+               "tail": true,
+               "eyes": 2,
+               "children": [
+                  {
+                     "name": "Bark",
+                     "type": "dog",
+                     "age": 1,
+                     "legs": 4,
+                     "eyes": 2,
+                     "tail": true,
+                     "children": []
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "name": "Bobby",
+         "type": "snake",
+         "age": 12,
+         "legs": null,
+         "eyes": 2,
+         "isPoisonous": false,
+         "children": []
+      },
+      {
+         "name": "Milka",
+         "type": "cow",
+         "age": 25,
+         "eyes": 2,
+         "legs": 4,
+         "children": [],
+         "provides": [
+            "milk",
+            "meat"
+         ]
+      },
+      {
+         "name": "Peter",
+         "type": "eagle",
+         "age": 32,
+         "legs": 2,
+         "eyes": 2,
+         "wings": 2,
+         "children": []
+      },
+      {
+         "name": "Mark",
+         "type": "Sheep",
+         "legs": 4,
+         "eyes": 2,
+         "age": 2,
+         "provides": [
+            "milk",
+            "meat",
+            "wool"
+         ],
+         "children": []
+      },
+      {
+         "name": "Jello",
+         "type": "jelly fish",
+         "age": null,
+         "isPoisonous": true,
+         "children": []
+      },
+      {
+         "name": "Goldy",
+         "type": "fish",
+         "age": 0.5,
+         "fins": 5,
+         "children": []
+      },
+      {
+         "name": "Kittie",
+         "type": "cat",
+         "age": 7,
+         "legs": 4,
+         "tail": true,
+         "eyes": 2,
+         "children": []
+      },
+      {
+         "name": "Spidey",
+         "type": "tarantula",
+         "age": 3,
+         "isPoisonous": true,
+         "legs": 8,
+         "eyes": 8,
+         "children": [
+            {
+               "name": "Spidey Junior",
+               "type": "tarantula",
+               "age": 2,
+               "isPoisonous": true,
+               "legs": 8,
+               "eyes": 8,
+               "children": [
+                  {
+                     "name": "Spidey the Third",
+                     "type": "tarantula",
+                     "age": 1,
+                     "isPoisonous": true,
+                     "legs": 8,
+                     "eyes": 8,
+                     "children": []
+                  }
+               ]
+            },
+            {
+               "name": "Poison",
+               "type": "tarantula",
+               "age": 3,
+               "isPoisonous": true,
+               "legs": 8,
+               "eyes": 8,
+               "children": []
+            }
+         ]
+      },
+      {
+         "name": "Sparky",
+         "type": "parrot",
+         "age": 56,
+         "eyes": 2,
+         "legs": 2,
+         "children": []
+      },
+      {
+         "name": "Coco",
+         "type": "chicken",
+         "age": 4,
+         "eyes": 2,
+         "legs": 2,
+         "wings": 2,
+         "provides": [
+            "eggs"
+         ],
+         "children": []
+      },
+      {
+         "name": "Jack",
+         "type": "goat",
+         "legs": 4,
+         "age": 7,
+         "provides": [
+            "meat",
+            "milk"
+         ],
+         "children": []
+      },
+      {
+         "name": "Katty",
+         "type": "pig",
+         "legs": 4,
+         "eyes": 2,
+         "age": 7,
+         "provides": [
+            "meat"
+         ],
+         "children": []
+      },
+      {
+         "name": "Batty",
+         "type": "bat",
+         "eyes": 2,
+         "legs": 4,
+         "age": 5,
+         "isPoisonous": true,
+         "children": []
+      }
+   ]
+}
