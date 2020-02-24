@@ -4,7 +4,7 @@
 function Human(name, age) {
     this.name = name;
     this.age = age;
-} 
+}
 
 let person = new Human("Viktor", 30)
 
@@ -62,21 +62,21 @@ class Car extends WheeledVehicle {
         this.enginType = enginType;
         this.ac = ac;
 
-        if(ac) this.price += 400;
+        if (ac) this.price += 400;
     }
 
     buyCar(money) {
-        money >= this.price ? 
-            console.log(`Congrats! You bought a Car`) : 
+        money >= this.price ?
+            console.log(`Congrats! You bought a Car`) :
             console.log(`You need ${this.price - money} more to buy this car!`)
     }
 
     // ------------- static methods --------------
     // keyword STATIC
     // definition inside of a class, but we can use them without creating an instance of the class itself
-    
+
     static addAc(car) {
-        if(!car.ac) {
+        if (!car.ac) {
             car.ac = true;
             car.price += 400;
             console.log(`The car has AC now!`);
@@ -116,10 +116,10 @@ class Calculations {
 // console.log(Calculations.pi);
 
 // ---------Getter and setter -----------
-class ElectricCar extends Car{
-    constructor(id, name, batch, price, wheels, enginType, owner){
-        super(id, name, batch, price, wheels, enginType, true);   
-        this.owner = owner;    
+class ElectricCar extends Car {
+    constructor(id, name, batch, price, wheels, enginType, owner) {
+        super(id, name, batch, price, wheels, enginType, true);
+        this.owner = owner;
     }
     get owner() {
         console.log("We are getting the name of the owner. Please wait...");
@@ -131,7 +131,7 @@ class ElectricCar extends Car{
         console.log("We are setting the owner name. Please wait....");
         ownerName.length > 1 ?
             this._owner = ownerName :
-            (() => {throw new Error("The name is too short")})();
+            (() => { throw new Error("The name is too short") })();
         // this.owner = ownerName;
     }
 }
