@@ -1,5 +1,6 @@
 let animals = [];
 let flatAnimals = [];
+let isAsc = false;
 
 const getData = async url => {
   // getting data
@@ -9,7 +10,7 @@ const getData = async url => {
   animals = [...parsedData.animals];
   flatAnimals = flattenArray(animals);
   allPoisonousAnimals(flatAnimals);
-
+  printAnimals(animals);
   //   console.log(animals.filter(a => a.isPoisonous));
   console.table(animals);
   // console.log(flatAnimals);
@@ -39,6 +40,58 @@ const flattenArray = animals => {
 
   return flatAnimals;
 };
+
+// Print Animals in the DOM
+const printAnimals = animals => {
+  // SELECT TBODY BY ID table-data
+  const tbody = document.querySelector('#table-data');
+  tbody.innerHTML = '';
+  animals.forEach((animal, index) => {
+    tbody.innerHTML += `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${animal.name}</td>
+        <td>${animal.type}</td>
+        <td>${animal.legs ? animal.legs : 'N/A'}</td>
+        <td>${animal.eyes ? animal.eyes : 'N/A'}</td>
+        <td>${animal.wings ? animal.wings : 'N/A'}</td>
+        <td>${animal.tail ? animal.tail : 'N/A'}</td>
+        <td>${animal.age ? animal.age : 'N/A'}</td>
+        <td>${animal.children.length}</td>
+        <td>${animal.provides && animal.provides.length > 0 ? animal.provides : 'N/A'}</td>
+        <td>${animal.isPoisonous ? 'Yes' : 'No'}</td>
+      </tr>
+    `;
+  });
+};
+
+// Sort Animals by clicing on the age header
+
+const sortAnimals = animals => {
+  let sortedAnimals = [];
+  if (isAsc) {
+    sortedAnimals = [...animals.sort((a, b) => a.age - b.age)];
+  } else {
+    sortedAnimals = [...animals.sort((a, b) => b.age - a.age)];
+  }
+  printAnimals(sortedAnimals);
+};
+
+document.querySelector('#age').addEventListener('click', () => {
+  sortAnimals(animals);
+  isAsc = !isAsc;
+});
+
+//Filter animals by type by entering type in input and clicking filter btn
+
+const filterByType = animals => {
+  const value = document.querySelector('#input').value;
+  const filteredAnimals = animals.filter(a => a.type.toLowerCase() === value.toLowerCase());
+  printAnimals(filteredAnimals);
+  document.querySelector('#input').value = '';
+};
+
+document.querySelector('#filter').addEventListener('click', () => filterByType(flatAnimals));
 
 // CLasses
 
