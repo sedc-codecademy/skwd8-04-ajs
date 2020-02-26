@@ -1,0 +1,100 @@
+body
+{
+    display: block;
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.container
+{
+    font-family: Arial;
+    font-size: 18px;
+    display: none;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.container.visible
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.container > .sidebar
+{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    background: #303030;
+    color: #FFF;
+    flex-direction: column;
+}
+
+.container > .workspace
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+
+.sidebar > .user-data
+{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 10px;
+    text-align: center;
+}
+
+.user-data > span.fa
+{
+    font-size: 72px;
+    line-height: 72px;
+    border-radius: 50%;
+    color: #303030;
+    background: white;
+    padding: 10px 20px;
+}
+
+.user-data > ul
+{
+    display: block;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.user-data > ul > li
+{
+    text-align: left;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.file-structure
+{
+    display: block;
+    max-width: 100%;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+}
+
+.file-structure > li
+{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid #303030;
+}
+
+.file-structure > li > span
+{
+    margin-right: 5px;
+}

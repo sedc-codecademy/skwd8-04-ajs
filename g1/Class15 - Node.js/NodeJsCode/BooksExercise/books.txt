@@ -1,0 +1,137 @@
+﻿1. Author: Ann Leckie Title: ANCILLARY JUSTICE 
+2. Author: Neil Gaiman Title: AMERICAN GODS 
+3. Author: China Miéville Title: THE CITY & THE CITY 
+4. Author: Caitlín R. Kiernan Title: THE DROWNING GIRL 
+5. Author: China Miéville Title: PERDIDO STREET STATION 
+6. Author: Kim Stanley Robinson Title: 2312 
+7. Author: China Miéville Title: EMBASSYTOWN 
+8. Author: Susanna Clarke Title: JONATHAN STRANGE & MR. NORRELL 
+9. Author: William Gibson Title: NEUROMANCER 
+10. Author: China Miéville Title: THE SCAR 
+11. Author: Stephen Baxter Title: THE TIME SHIPS 
+12. Author: Geoff Ryman Title: AIR 
+13. Author: Jo Walton Title: AMONG OTHERS 
+14. Author: Vernor Vinge Title: A DEEPNESS IN THE SKY 
+15. Author: Neal Stephenson Title: THE DIAMOND AGE 
+16. Author: Connie Willis Title: DOOMSDAY BOOK 
+17. Author: Kameron Hurley Title: GOD'S WAR 
+18. Author: N. K. Jemisin Title: THE HUNDRED THOUSAND KINGDOMS 
+19. Author: Ken MacLeod Title: LEARNING THE WORLD 
+20. Author: John Crowley Title: LITTLE, BIG 
+21. Author: Kim Stanley Robinson Title: RED MARS 
+22. Author: Gene Wolfe Title: THE SWORD OF THE LICTOR 
+23. Author: Naomi Novik Title: UPROOTED 
+24. Author: Charles Stross Title: ACCELERANDO 
+25. Author: Neal Stephenson Title: ANATHEM 
+26. Author: Mary Gentle Title: ASH 
+27. Author: Nancy Kress Title: BEGGARS IN SPAIN 
+28. Author: Kim Stanley Robinson Title: BLUE MARS 
+29. Author: Emma Bull Title: BONE DANCE 
+30. Author: Ian McDonald Title: BRASYL 
+31. Author: Michael Bishop Title: BRITTLE INNINGS 
+32. Author: Gene Wolfe Title: THE CLAW OF THE CONCILIATOR 
+33. Author: Tim Powers Title: DECLARE 
+34. Author: Ian McDonald Title: THE DERVISH HOUSE 
+35. Author: N. K. Jemisin Title: THE FIFTH SEASON 
+36. Author: Charles Stross Title: GLASSHOUSE 
+37. Author: Helene Wecker Title: THE GOLEM AND THE JINNI 
+38. Author: Margaret Atwood Title: THE HANDMAID'S TALE 
+39. Author: Cory Doctorow Title: LITTLE BROTHER 
+40. Author: Julian May Title: THE MANY-COLORED LAND 
+41. Author: M. John Harrison Title: NOVA SWING 
+42. Author: Neil Gaiman Title: THE OCEAN AT THE END OF THE LANE 
+43. Author: Thomas M. Disch Title: ON WINGS OF SONG 
+44. Author: James Morrow Title: ONLY BEGOTTEN DAUGHTER 
+45. Author: Connie Willis Title: PASSAGE 
+46. Author: Arthur C. Clarke Title: RENDEZVOUS WITH RAMA 
+47. Author: Gene Wolfe Title: THE SHADOW OF THE TORTURER 
+48. Author: R. A. MacAvoy Title: TEA WITH THE BLACK DRAGON 
+49. Author: Margo Lanagan Title: TENDER MORSELS 
+50. Author: Cixin Liu Title: THE THREE-BODY PROBLEM 
+51. Author: James Morrow Title: TOWING JEHOVAH 
+52. Author: Paolo Bacigalupi Title: THE WINDUP GIRL 
+53. Author: Michael Chabon Title: THE YIDDISH POLICEMEN'S UNION 
+54. Author: Nicola Griffith Title: AMMONITE 
+55. Author: Ann Leckie Title: ANCILLARY SWORD 
+56. Author: Jeff VanderMeer Title: ANNIHILATION 
+57. Author: Frederik Pohl Title: BEYOND THE BLUE EVENT HORIZON 
+58. Author: Connie Willis Title: BLACKOUT 
+59. Author: Tom Reamy Title: BLIND VOICES 
+60. Author: Peter Watts Title: BLINDSIGHT 
+61. Author: Greg Bear Title: BLOOD MUSIC 
+62. Author: Michael Swanwick Title: BONES OF THE EARTH 
+63. Author: Jane Yolen Title: BRIAR ROSE 
+64. Author: Nalo Hopkinson Title: BROWN GIRL IN THE RING 
+65. Author: Ken MacLeod Title: THE CASSINI DIVISION 
+66. Author: Maureen F. McHugh Title: CHINA MOUNTAIN ZHANG 
+67. Author: Robert Charles Wilson Title: THE CHRONOLITHS 
+68. Author: Gene Wolfe Title: THE CITADEL OF THE AUTARCH 
+69. Author: William Gibson Title: COUNT ZERO 
+70. Author: Neal Stephenson Title: CRYPTONOMICON 
+71. Author: Lois McMaster Bujold Title: THE CURSE OF CHALION 
+72. Author: George R. R. Martin Title: A DANCE WITH DRAGONS 
+73. Author: Greg Bear Title: DARWIN'S RADIO 
+74. Author: William Gibson & Bruce Sterling Title: THE DIFFERENCE ENGINE 
+75. Author: Ursula K. Le Guin Title: THE DISPOSSESSED 
+76. Author: Bruce Sterling Title: DISTRACTION 
+77. Author: Dave Hutchinson Title: EUROPE AT MIDNIGHT 
+78. Author: Nisi Shawl Title: EVERFAIR 
+79. Author: Ken MacLeod Title: THE EXECUTION CHANNEL 
+80. Author: Dan Simmons Title: THE FALL OF HYPERION 
+81. Author: Vernor Vinge Title: A FIRE UPON THE DEEP 
+82. Author: Philip K. Dick Title: FLOW MY TEARS, THE POLICEMAN SAID 
+83. Author: Joe Haldeman Title: FOREVER PEACE 
+84. Author: Arthur C. Clarke Title: THE FOUNTAINS OF PARADISE 
+85. Author: Robert A. Heinlein Title: FRIDAY 
+86. Author: Frederik Pohl Title: GATEWAY 
+87. Author: Katherine Addison Title: THE GOBLIN EMPEROR 
+88. Author: Neil Gaiman Title: THE GRAVEYARD BOOK 
+89. Author: Lucius Shepard Title: GREEN EYES 
+90. Author: Kim Stanley Robinson Title: GREEN MARS 
+91. Author: Patricia A. McKillip Title: HARPIST IN THE WIND 
+92. Author: Dan Simmons Title: HYPERION 
+93. Author: China Miéville Title: IRON COUNCIL 
+94. Author: David Brin Title: KILN PEOPLE 
+95. Author: James Morrow Title: THE LAST WITCHFINDER 
+96. Author: Ursula K. Le Guin Title: LAVINIA 
+97. Author: Frederik Pohl Title: MAN PLUS 
+98. Author: Emmi Itäranta Title: MEMORY OF WATER 
+99. Author: Nalo Hopkinson Title: MIDNIGHT ROBBER 
+100. Author: Sean Stewart Title: MOCKINGBIRD 
+101. Author: William Gibson Title: MONA LISA OVERDRIVE 
+102. Author: John Barnes Title: MOTHER OF STORMS 
+103. Author: Greg Bear Title: MOVING MARS 
+104. Author: Nalo Hopkinson Title: THE NEW MOON'S ARMS 
+105. Author: Yoon Ha Lee Title: NINEFOX GAMBIT 
+106. Author: N. K. Jemisin Title: THE OBELISK GATE 
+107. Author: Lavie Tidhar Title: OSAMA 
+108. Author: Ursula K. Le Guin Title: THE OTHER WIND 
+109. Author: Lois McMaster Bujold Title: PALADIN OF SOULS 
+110. Author: Daryl Gregory Title: PANDEMONIUM 
+111. Author: William Gibson Title: THE PERIPHERAL 
+112. Author: David Brin Title: THE POSTMAN 
+113. Author: Orson Scott Card Title: PRENTICE ALVIN 
+114. Author: Ellen Kushner Title: THE PRIVILEGE OF THE SWORD 
+115. Author: China Miéville Title: RAILSEA 
+116. Author: Vernor Vinge Title: RAINBOWS END 
+117. Author: Orson Scott Card Title: RED PROPHET 
+118. Author: Neal Stephenson Title: SEVENEVES 
+119. Author: Orson Scott Card Title: SEVENTH SON 
+120. Author: Charles de Lint Title: SOMEPLACE TO BE FLYING 
+121. Author: Mary Doria Russell Title: THE SPARROW 
+122. Author: Orson Scott Card Title: SPEAKER FOR THE DEAD 
+123. Author: Robert Charles Wilson Title: SPIN 
+124. Author: Michael Swanwick Title: STATIONS OF THE TIDE 
+125. Author: Robert Silverberg Title: THE STOCHASTIC MAN 
+126. Author: Sofia Samatar Title: A STRANGER IN OLONDRIA 
+127. Author: Saladin Ahmed Title: THRONE OF THE CRESCENT MOON 
+128. Author: Guy Gavriel Kay Title: TIGANA 
+129. Author: Gregory Benford Title: TIMESCAPE 
+130. Author: Guy Gavriel Kay Title: UNDER HEAVEN 
+131. Author: David Brin Title: THE UPLIFT WAR 
+132. Author: Elizabeth Hand Title: WAKING THE MOON 
+133. Author: Kate Wilhelm Title: WHERE LATE THE SWEET BIRDS SANG 
+134. Author: Nnedi Okorafor Title: WHO FEARS DEATH 
+135. Author: Wilson Tucker Title: THE YEAR OF THE QUIET SUN 
+136. Author: Kim Stanley Robinson Title: THE YEARS OF RICE AND SALT 
+137. Author: Lauren Beukes Title: ZOO CITY 
