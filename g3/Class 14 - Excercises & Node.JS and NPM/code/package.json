@@ -1,0 +1,14 @@
+{
+  "name": "node-intro",
+  "version": "0.1.0",
+  "description": "Just an introduction app for node.js class 14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "d3jan",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
