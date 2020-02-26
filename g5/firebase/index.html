@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link type="text/css" rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="firebaseui-auth-container"></div>
+
+        <div class="container">
+            <div class="sidebar">
+                <div class="user-data">
+                    <span class="fa fa-user"></span>
+                    <ul class="user-details">
+                        <li>
+                            <span class="fa fa-envelope-o"></span>
+                            <span></span>
+                        </li>
+                        <li>
+                            <span class="fa fa-etsy"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="workspace">
+                <ul class="file-structure">
+
+                </ul>
+            </div>
+        </div>
+         
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-storage.js"></script>
+        <script>
+            var firebaseConfig = {
+                
+            };
+        
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var storage = firebase.storage();
+          </script>
+
+          <script src="index.js"></script>
+    </body>
+</html>
