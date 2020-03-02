@@ -34,6 +34,8 @@ This repository will contain every piece of material about the subject. It will 
 
 [You don't know JS Books (free)](https://github.com/getify/You-Dont-Know-JS)
 
+[JavaScript and Jquery - Jon Ducket](https://www.bookdepository.com/JavaScript-and-JQuery/9781118531648)
+
 ## Contact
 Trainer: gdragan6@gmail.com
 
