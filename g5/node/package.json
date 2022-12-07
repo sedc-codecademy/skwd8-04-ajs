@@ -4,8 +4,8 @@
     "description": "This is demo project",
     "version": "0.0.1",
     "dependencies": {
-        "body-parser": "^1.19.0",
-        "express": "^4.17.1"
+        "body-parser": "^1.20.1",
+        "express": "^4.18.2"
     },
     "devDependencies": {
         "nodemon": "^2.0.2"
